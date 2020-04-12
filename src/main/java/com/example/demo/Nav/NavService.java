@@ -83,11 +83,12 @@ public class NavService {
     }
 
     public List<String> getInstructions(Nav coords) {
-
-//        QueryResult qr = index.findClosest(coords.getLat(), coords.getLon(), EdgeFilter.ALL_EDGES );
+        double calculatedLat = coords.getCalculatedLat();
+        double calculatedLon = coords.getCalculatedLon();
+//        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
 //        EdgeIteratorState edge = qr.getClosestEdge();
 //        System.out.println(qr.getSnappedPoint());
-        GHRequest req = new GHRequest(coords.getLat(),coords.getLon(), auebLatitude, auebLongitude).
+        GHRequest req = new GHRequest(calculatedLat,calculatedLon, auebLatitude, auebLongitude).
                 setWeighting("fastest").
                 setVehicle("foot").
                 setLocale(Locale.US);
