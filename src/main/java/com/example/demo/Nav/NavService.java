@@ -84,6 +84,8 @@ public class NavService {
 
     public List<String> getInstructions(Nav coords) {
 
+//        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
+
 //        QueryResult qr = index.findClosest(coords.getLat(), coords.getLon(), EdgeFilter.ALL_EDGES );
 //        EdgeIteratorState edge = qr.getClosestEdge();
 //        System.out.println(qr.getSnappedPoint());
@@ -96,7 +98,7 @@ public class NavService {
         if (rsp.hasErrors()) {
             // handle them!
             for (Throwable error : rsp.getErrors()) {
-                System.out.println(error.getMessage());
+//                System.out.println(error.getMessage());
             }
         }
 
@@ -114,7 +116,10 @@ public class NavService {
         ArrayList<String> instructions = new ArrayList<String>();
         instructions.add(dist);
         instructions.add(details);
+        Instruction first = il.get(0);
+        coords.getDirection(first.getPoints().getLat(0),first.getPoints().getLon(0));
         for (Instruction instruction : il) {
+
             instructions.add(mapInstruction(instruction.getSign()) + " for " + Math.round(instruction.getDistance()) + " meters, on " + instruction.getName());
         }
         return instructions;

@@ -1,32 +1,61 @@
 package com.example.demo.Nav;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Nav {
 
+    private double lat, lon, picLat, picLon;
 
-    private double lat,lon;
-
-    public Nav(){
-
+    public void getDirection(double dirLat, double dirLon) {
+        double adjustedDirLat = dirLat - lat;
+        double adjustedDirLon = dirLon - lon;
+        String LatDirection;
+        String LonDirection;
+        String DirLatDirection;
+        String DirLonDirection;
+        if (picLon > 0) {
+            LonDirection = "east";
+        } else {
+            LonDirection = "west";
+        }
+        if (picLat > 0) {
+            LatDirection = "north";
+        } else {
+            LatDirection = "south";
+        }
+        if (dirLon - lon >= 0) {
+            DirLonDirection = "east";
+        } else {
+            DirLonDirection = "west";
+        }
+        if (dirLat - lat >= 0) {
+            DirLatDirection = "north";
+        } else {
+            DirLatDirection = "south";
+        }
+        System.out.println("Looking towards "+picLat+", "+picLon+"\nShould look at "+adjustedDirLat+", "+adjustedDirLon+"\nSo, turn "+getAngle(adjustedDirLon,adjustedDirLon,picLat,picLon));
     }
-    public Nav(double lat, double lon){
-        super();
-        this.lat=lat;
-        this.lon=lon;
+
+    public double getAngle(double dirLon, double dirLat, double picLat, double picLon) {
+        double dotProduct = dotProduct(picLon, picLat,dirLon,dirLat);
+        double aMagnitude = magnitude(picLon,picLat);
+        double bMagnitude = magnitude(dirLon,dirLat);
+        return Math.toDegrees(dotProduct/(aMagnitude*bMagnitude));
     }
 
-    public double getLat() {
-        return lat;
+    private double dotProduct(double ax, double ay, double bx,double by){
+        return (ax*bx)+(ay*by);
     }
 
-    public void setLat(double lat) {
-        this.lat = lat;
+    private double magnitude(double x, double y){
+        return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
     }
 
-    public double getLon() {
-        return lon;
-    }
-
-    public void setLon(double lon) {
-        this.lon = lon;
-    }
 }
