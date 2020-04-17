@@ -5,11 +5,8 @@ import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
 import com.graphhopper.PathWrapper;
 import com.graphhopper.reader.osm.GraphHopperOSM;
-import com.graphhopper.routing.util.EdgeFilter;
 import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.storage.index.LocationIndex;
-import com.graphhopper.storage.index.QueryResult;
-import com.graphhopper.util.EdgeIteratorState;
 import com.graphhopper.util.Helper;
 import com.graphhopper.util.Instruction;
 import com.graphhopper.util.InstructionList;
@@ -40,7 +37,7 @@ public class NavService {
         gh.clean();
         gh.setEncodingManager(EncodingManager.create("foot"));
         gh.importOrLoad();
-        index= gh.getLocationIndex();
+        index = gh.getLocationIndex();
         String jsonStr = null;
         try {
             jsonStr = Helper.isToString(new FileInputStream(new File("maps/asoee.geojson")));
@@ -82,49 +79,6 @@ public class NavService {
         System.out.println("so the reader commences");
     }
 
-    public List<String> getInstructions(Nav coords) {
-
-//        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
-
-//        QueryResult qr = index.findClosest(coords.getLat(), coords.getLon(), EdgeFilter.ALL_EDGES );
-//        EdgeIteratorState edge = qr.getClosestEdge();
-//        System.out.println(qr.getSnappedPoint());
-        GHRequest req = new GHRequest(coords.getLat(),coords.getLon(), auebLatitude, auebLongitude).
-                setWeighting("fastest").
-                setVehicle("foot").
-                setLocale(Locale.US);
-        GHResponse rsp = gh.route(req);
-
-        if (rsp.hasErrors()) {
-            // handle them!
-            for (Throwable error : rsp.getErrors()) {
-//                System.out.println(error.getMessage());
-            }
-        }
-
-// use the best path, see the GHResponse class for more possibilities.
-        PathWrapper path = rsp.getBest();
-
-// distance in meters and time in millis of the full path
-        double distance = path.getDistance();
-        long timeInMs = path.getTime();
-
-        InstructionList il = path.getInstructions();
-// iterate over every turn instruction
-        String dist = "Distance: " + Math.round(distance) + " meters";
-        String details  = "Estimated time: " + (timeInMs / 60000) + " minutes";
-        ArrayList<String> instructions = new ArrayList<String>();
-        instructions.add(dist);
-        instructions.add(details);
-        Instruction first = il.get(0);
-        coords.getDirection(first.getPoints().getLat(0),first.getPoints().getLon(0));
-        for (Instruction instruction : il) {
-
-            instructions.add(mapInstruction(instruction.getSign()) + " for " + Math.round(instruction.getDistance()) + " meters, on " + instruction.getName());
-        }
-        return instructions;
-    }
-
     private static String mapInstruction(int code) {
         if (code == -3) {
             return "Turn sharp left";
@@ -149,5 +103,48 @@ public class NavService {
         } else {
             return "keep right";
         }
+    }
+
+    public List<String> getInstructions(Nav coords) {
+
+//        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
+
+//        QueryResult qr = index.findClosest(coords.getLat(), coords.getLon(), EdgeFilter.ALL_EDGES );
+//        EdgeIteratorState edge = qr.getClosestEdge();
+//        System.out.println(qr.getSnappedPoint());
+        GHRequest req = new GHRequest(coords.getSrcLat(), coords.getSrcLon(), coords.getDestLat(), coords.getDestLon()).
+                setWeighting("fastest").
+                setVehicle("foot").
+                setLocale(Locale.US);
+        GHResponse rsp = gh.route(req);
+
+        if (rsp.hasErrors()) {
+            // handle them!
+            for (Throwable error : rsp.getErrors()) {
+//                System.out.println(error.getMessage());
+            }
+        }
+
+// use the best path, see the GHResponse class for more possibilities.
+        PathWrapper path = rsp.getBest();
+
+// distance in meters and time in millis of the full path
+        double distance = path.getDistance();
+        long timeInMs = path.getTime();
+
+        InstructionList il = path.getInstructions();
+// iterate over every turn instruction
+        String dist = "Distance: " + Math.round(distance) + " meters";
+        String details = "Estimated time: " + (timeInMs / 60000) + " minutes";
+        ArrayList<String> instructions = new ArrayList<String>();
+        instructions.add(dist);
+        instructions.add(details);
+        Instruction first = il.get(0);
+        coords.getDirection(first.getPoints().getLat(0), first.getPoints().getLon(0));
+        for (Instruction instruction : il) {
+
+            instructions.add(mapInstruction(instruction.getSign()) + " for " + Math.round(instruction.getDistance()) + " meters, on " + instruction.getName());
+        }
+        return instructions;
     }
 }

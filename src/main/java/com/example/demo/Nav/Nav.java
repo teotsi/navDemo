@@ -11,11 +11,11 @@ import lombok.*;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Nav {
 
-    private double lat, lon, picLat, picLon;
+    private double srcLat, srcLon, destLat, destLon, picLat, picLon;
 
     public void getDirection(double dirLat, double dirLon) {
-        double adjustedDirLat = dirLat - lat;
-        double adjustedDirLon = dirLon - lon;
+        double adjustedDirLat = dirLat - srcLat;
+        double adjustedDirLon = dirLon - srcLon;
         String LatDirection;
         String LonDirection;
         String DirLatDirection;
@@ -30,17 +30,18 @@ public class Nav {
         } else {
             LatDirection = "south";
         }
-        if (dirLon - lon >= 0) {
+        if (dirLon - srcLon >= 0) {
             DirLonDirection = "east";
         } else {
             DirLonDirection = "west";
         }
-        if (dirLat - lat >= 0) {
+        if (dirLat - srcLat >= 0) {
             DirLatDirection = "north";
         } else {
             DirLatDirection = "south";
         }
-        System.out.println("Looking towards "+picLat+", "+picLon+"\nShould look at "+adjustedDirLat+", "+adjustedDirLon+"\nSo, turn "+getAngle(adjustedDirLon,adjustedDirLon,picLat,picLon));
+        System.out.println("Looking towards "+(picLon+ srcLon)+", "+(picLat+ srcLat)+"\nShould look at "+dirLon+", "+dirLat+"\nSo, turn "+getAngleAlt(adjustedDirLon,adjustedDirLat));
+        System.out.println("-------------------------------------");
     }
 
     public double getAngle(double dirLon, double dirLat, double picLat, double picLon) {
@@ -57,5 +58,14 @@ public class Nav {
     private double magnitude(double x, double y){
         return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
     }
+    private double getAngleAlt(double x, double y){
+        double angle =  Math.toDegrees(Math.atan2(y - picLat, x - picLon));
 
+//        if(angle < 0){
+//            angle += 360;
+//        }
+
+        return angle;
+    }
 }
+

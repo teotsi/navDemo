@@ -16,8 +16,4 @@ public class NavController {
         return service.getInstructions(coords);
     }
 
-    @GetMapping("/")
-    public boolean isUp() {
-        return true;
-    }
 }
