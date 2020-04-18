@@ -1,5 +1,6 @@
 package com.example.demo.Nav;
 
+import com.example.demo.Instruction.Instruction;
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
@@ -8,8 +9,8 @@ import com.graphhopper.reader.osm.GraphHopperOSM;
 import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.storage.index.LocationIndex;
 import com.graphhopper.util.Helper;
-import com.graphhopper.util.Instruction;
 import com.graphhopper.util.InstructionList;
+import com.graphhopper.util.PointList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 @Service
@@ -78,34 +78,7 @@ public class NavService {
 
         System.out.println("so the reader commences");
     }
-
-    private static String mapInstruction(int code) {
-        if (code == -3) {
-            return "Turn sharp left";
-        } else if (code == -2) {
-            return "Turn left";
-        } else if (code == -1) {
-            return "Turn slight left";
-        } else if (code == 0) {
-            return "Straight";
-        } else if (code == 1) {
-            return "Turn slight right";
-        } else if (code == 2) {
-            return "Turn right";
-        } else if (code == 3) {
-            return "Turn sharp right";
-        } else if (code == 4) {
-            return "Tadaaa!";
-        } else if (code == 5) {
-            return "Via reached";
-        } else if (code == 6) {
-            return "use roundabout!";
-        } else {
-            return "keep right";
-        }
-    }
-
-    public List<String> getInstructions(Nav coords) {
+    public com.example.demo.Instruction.Instruction getInstructions(Nav coords) {
 
 //        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
 
@@ -129,22 +102,11 @@ public class NavService {
         PathWrapper path = rsp.getBest();
 
 // distance in meters and time in millis of the full path
-        double distance = path.getDistance();
+        double distance = Math.round(path.getDistance());
         long timeInMs = path.getTime();
-
-        InstructionList il = path.getInstructions();
-// iterate over every turn instruction
-        String dist = "Distance: " + Math.round(distance) + " meters";
-        String details = "Estimated time: " + (timeInMs / 60000) + " minutes";
-        ArrayList<String> instructions = new ArrayList<String>();
-        instructions.add(dist);
-        instructions.add(details);
-        Instruction first = il.get(0);
-        coords.getDirection(first.getPoints().getLat(0), first.getPoints().getLon(0));
-        for (Instruction instruction : il) {
-
-            instructions.add(mapInstruction(instruction.getSign()) + " for " + Math.round(instruction.getDistance()) + " meters, on " + instruction.getName());
-        }
-        return instructions;
+        System.out.println(path.getDescription());
+        InstructionList instructionList = path.getInstructions();
+        PointList points = path.getPoints();
+        return new Instruction(distance,timeInMs,instructionList,points);
     }
 }

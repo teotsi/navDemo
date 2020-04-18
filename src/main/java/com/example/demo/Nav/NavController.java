@@ -1,5 +1,6 @@
 package com.example.demo.Nav;
 
+import com.example.demo.Instruction.Instruction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ public class NavController {
     private NavService service;
 
     @PostMapping("/nav")
-    public List<String> getInstructionsFromPoint(@RequestBody Nav coords) {
+    public Instruction getInstructionsFromPoint(@RequestBody Nav coords) {
         return service.getInstructions(coords);
     }
 
