@@ -30,7 +30,7 @@ public class NavService {
     public NavService() {
 
         gh = new GraphHopperOSM().forServer();
-        gh.setDataReaderFile("maps/asoee.osm");
+        gh.setDataReaderFile("maps/sepotest.osm");
         gh.setMinNetworkSize(0,0);
 // where to store graphhopper files?
         gh.setGraphHopperLocation("graphFolder");

@@ -43,7 +43,7 @@
                         <a class="dropdown-item" href="#">MotoPlace</a>
                     </div>
                 </div>
-                <input class="form-control" type="text" name="title" id="destination" value="motoPlace" placeholder="Pick location">
+                <input class="form-control" type="text" name="title" id="destination" value="MotoPlace" placeholder="Pick location">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
