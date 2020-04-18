@@ -26,12 +26,12 @@ public class NavService {
 
     private GraphHopper gh;
     private LocationIndex index;
-    private double victoriaLatitude, victoriaLongitude, auebLatitude, auebLongitude;
 
     public NavService() {
 
         gh = new GraphHopperOSM().forServer();
         gh.setDataReaderFile("maps/asoee.osm");
+        gh.setMinNetworkSize(0,0);
 // where to store graphhopper files?
         gh.setGraphHopperLocation("graphFolder");
         gh.clean();
@@ -39,43 +39,40 @@ public class NavService {
         gh.importOrLoad();
         index = gh.getLocationIndex();
         String jsonStr = null;
-        try {
-            jsonStr = Helper.isToString(new FileInputStream(new File("maps/asoee.geojson")));
-            JSONObject json = new JSONObject(jsonStr);
-            JSONArray entries = json.getJSONArray("features");
+//        try {
+//            jsonStr = Helper.isToString(new FileInputStream(new File("maps/asoee.geojson")));
+//            JSONObject json = new JSONObject(jsonStr);
+//            JSONArray entries = json.getJSONArray("features");
 
-            victoriaLatitude = victoriaLongitude = auebLatitude = auebLongitude = 0; //this is updated in the for loop
-            for (int objectCnt = 0; objectCnt < entries.length(); objectCnt++) {
-                JSONObject entry = entries.getJSONObject(objectCnt);
-                JSONObject geo = entry.getJSONObject("geometry");
-//                JSONObject features = entry.getJSONObject("features");
-                JSONArray coords = geo.getJSONArray("coordinates");
-                String type = entry.getString("type");
-                if (type.equals("Feature")) {
-                    try {
-
-                        String name = entry.getJSONObject("properties").getString("name:en");
-//                    System.out.println(name);
-                        if (name.equals("Victoria")) {
-                            victoriaLatitude = coords.getDouble(1);
-                            victoriaLongitude = coords.getDouble(0);
-                        } else if (name.contains("Athens University of Economics")) {
-                            coords = (JSONArray) coords.getJSONArray(0).get(5);
-                            auebLatitude = coords.getDouble(1);
-                            auebLongitude = coords.getDouble(0);
-                        }
-                    } catch (Exception e) {
-                        continue;
-                    }
-
-                }
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+//            for (int objectCnt = 0; objectCnt < entries.length(); objectCnt++) {
+//                JSONObject entry = entries.getJSONObject(objectCnt);
+//                JSONObject geo = entry.getJSONObject("geometry");
+////                JSONObject features = entry.getJSONObject("features");
+//                JSONArray coords = geo.getJSONArray("coordinates");
+//                String type = entry.getString("type");
+//                if (type.equals("Feature")) {
+//                    try {
+//
+//                        String name = entry.getJSONObject("properties").getString("name:en");
+////                    System.out.println(name);
+//                        if (name.equals("Victoria")) {
+//                            victoriaLatitude = coords.getDouble(1);
+//                            victoriaLongitude = coords.getDouble(0);
+//                        } else if (name.contains("Athens University of Economics")) {
+//                            coords = (JSONArray) coords.getJSONArray(0).get(5);
+//                            auebLatitude = coords.getDouble(1);
+//                            auebLongitude = coords.getDouble(0);
+//                        }
+//                    } catch (Exception e) {
+//                        continue;
+//                    }
+//
+//                }
+//
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         System.out.println("so the reader commences");
     }
     public com.example.demo.Instruction.Instruction getInstructions(Nav coords) {
@@ -104,7 +101,6 @@ public class NavService {
 // distance in meters and time in millis of the full path
         double distance = Math.round(path.getDistance());
         long timeInMs = path.getTime();
-        System.out.println(path.getDescription());
         InstructionList instructionList = path.getInstructions();
         PointList points = path.getPoints();
         return new Instruction(distance,timeInMs,instructionList,points);
