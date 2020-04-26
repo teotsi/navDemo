@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -19,11 +20,14 @@ public class PointOfInterestService {
 
     @Autowired
     private PointOfInterestRepository pointOfInterestRepository;
+    @Value("${map.name}")
+    private String mapName;
+
 
     @PostConstruct
     private void readGeoJson() {
         try {
-            String jsonStr = Helper.isToString(new FileInputStream(new File("maps/sepotest.geojson")));
+            String jsonStr = Helper.isToString(new FileInputStream(new File("maps/" + mapName + ".geojson")));
             JSONObject json = new JSONObject(jsonStr);
             JSONArray entries = json.getJSONArray("features");
             for (Object element : entries) {
