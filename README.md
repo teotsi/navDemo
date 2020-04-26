@@ -5,7 +5,7 @@ android app which can be found [here](https://github.com/billk97/Indoor-Tracking
 
 # Getting Started
 
-Add your maps under the `maps` directory. `<map-name>.osm` has to exist for Graphhopper to work. The `.geojson` version of the file is only used for the testing frontend. You also need to set said file name to be the one that's used under `application.properties`, for example:
+Add your maps under the `resources/maps` directory. `<map-name>.osm` has to exist for Graphhopper to work. The `.geojson` version of the file is only used for the testing frontend. You also need to set said file name to be the one that's used under `application.properties`, for example:
 ```
 spring.mvc.view.prefix= /WEB-INF/jsp/
 spring.mvc.view.suffix= .jsp

@@ -17,12 +17,12 @@ public class AccessPointController {
     }
 
     @GetMapping("/access-point/{ssid}")
-    public AccessPoint getAccessPoint(@PathVariable String ssid){
+    public AccessPoint getAccessPoint(@PathVariable String ssid) {
         return service.getAccessPoint(ssid);
     }
 
     @PostMapping("/access-point")
-    public void registerAccessPoint(@RequestBody AccessPoint accessPoint){
+    public void registerAccessPoint(@RequestBody AccessPoint accessPoint) {
         service.registerAccessPoint(accessPoint);
     }
 }

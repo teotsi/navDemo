@@ -10,10 +10,16 @@ import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 @Service
 public class NavService {
@@ -24,9 +30,10 @@ public class NavService {
     private String mapName;
 
     @PostConstruct
-    private void initializeService() {
+    private void initializeService() throws IOException {
         gh = new GraphHopperOSM().forServer();
-        gh.setDataReaderFile("maps/" + mapName + ".osm"); //setting map file
+        gh.setDataReaderFile(new ClassPathResource(
+                "maps/" + mapName + ".osm").getURI().getPath()); //setting map file
         gh.setMinNetworkSize(0, 0);
 // where to store graphhopper files?
         gh.setGraphHopperLocation("graphFolder");

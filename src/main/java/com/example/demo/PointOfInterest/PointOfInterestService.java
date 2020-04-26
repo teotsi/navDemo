@@ -1,18 +1,19 @@
 package com.example.demo.PointOfInterest;
 
+import com.example.demo.CustomDeserializer.PointOfInterestListDeserializer;
 import com.example.demo.exception.FourOhFourException;
-import com.graphhopper.util.Helper;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -26,29 +27,19 @@ public class PointOfInterestService {
 
     @PostConstruct
     private void readGeoJson() {
-        try {
-            String jsonStr = Helper.isToString(new FileInputStream(new File("maps/" + mapName + ".geojson")));
-            JSONObject json = new JSONObject(jsonStr);
-            JSONArray entries = json.getJSONArray("features");
-            for (Object element : entries) {
-                try {
-                    JSONObject entry = (JSONObject) element;
-                    JSONObject properties = entry.getJSONObject("properties");
-                    String pointOfInterest = properties.getString("poi");
-                    if (pointOfInterest.equals("yes")) {
-                        JSONArray coordinates = entry.getJSONObject("geometry").getJSONArray("coordinates");
-                        String name = entry.getJSONObject("properties").getString("name");
-                        PointOfInterest poi = new PointOfInterest(name, coordinates.getDouble(1),
-                                coordinates.getDouble(0));
-                        this.registerPointOfInterest(poi);
-                    }
-                } catch (Exception e) {
-                    if (!(e instanceof JSONException)) {
-                        e.printStackTrace();
-                    }
-                }
 
-            }
+        ObjectMapper mapper = new ObjectMapper();
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(List.class, new PointOfInterestListDeserializer());
+        mapper.registerModule(module);
+        try {
+            InputStream resource = new ClassPathResource("maps/" + mapName + ".geojson").getInputStream();
+            JsonNode features = mapper.readTree(resource).get("features");
+
+            List<PointOfInterest> pointsOfInterest = mapper.readValue(features.toString(),
+                    new TypeReference<List<PointOfInterest>>() {
+                    });
+            this.registerPointsOfInterest(pointsOfInterest);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,5 +55,9 @@ public class PointOfInterestService {
 
     public void registerPointOfInterest(PointOfInterest pointOfInterest) {
         pointOfInterestRepository.save(pointOfInterest);
+    }
+
+    private void registerPointsOfInterest(List<PointOfInterest> pointsOfInterest) {
+        pointOfInterestRepository.saveAll(pointsOfInterest);
     }
 }
