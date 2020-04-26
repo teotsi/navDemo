@@ -1,80 +1,47 @@
 package com.example.demo.Nav;
 
 import com.example.demo.Instruction.Instruction;
+import com.example.demo.PointOfInterest.PointOfInterest;
+import com.example.demo.PointOfInterest.PointOfInterestService;
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
 import com.graphhopper.PathWrapper;
 import com.graphhopper.reader.osm.GraphHopperOSM;
 import com.graphhopper.routing.util.EncodingManager;
-import com.graphhopper.storage.index.LocationIndex;
 import com.graphhopper.util.Helper;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Locale;
 
 @Service
 public class NavService {
 
     private GraphHopper gh;
-    private LocationIndex index;
 
     public NavService() {
 
         gh = new GraphHopperOSM().forServer();
-        gh.setDataReaderFile("maps/sepotest.osm");
-        gh.setMinNetworkSize(0,0);
+        gh.setDataReaderFile("maps/sepotest.osm"); //setting map file
+        gh.setMinNetworkSize(0, 0);
 // where to store graphhopper files?
         gh.setGraphHopperLocation("graphFolder");
         gh.clean();
         gh.setEncodingManager(EncodingManager.create("foot"));
         gh.importOrLoad();
-        index = gh.getLocationIndex();
-        String jsonStr = null;
-//        try {
-//            jsonStr = Helper.isToString(new FileInputStream(new File("maps/asoee.geojson")));
-//            JSONObject json = new JSONObject(jsonStr);
-//            JSONArray entries = json.getJSONArray("features");
 
-//            for (int objectCnt = 0; objectCnt < entries.length(); objectCnt++) {
-//                JSONObject entry = entries.getJSONObject(objectCnt);
-//                JSONObject geo = entry.getJSONObject("geometry");
-////                JSONObject features = entry.getJSONObject("features");
-//                JSONArray coords = geo.getJSONArray("coordinates");
-//                String type = entry.getString("type");
-//                if (type.equals("Feature")) {
-//                    try {
-//
-//                        String name = entry.getJSONObject("properties").getString("name:en");
-////                    System.out.println(name);
-//                        if (name.equals("Victoria")) {
-//                            victoriaLatitude = coords.getDouble(1);
-//                            victoriaLongitude = coords.getDouble(0);
-//                        } else if (name.contains("Athens University of Economics")) {
-//                            coords = (JSONArray) coords.getJSONArray(0).get(5);
-//                            auebLatitude = coords.getDouble(1);
-//                            auebLongitude = coords.getDouble(0);
-//                        }
-//                    } catch (Exception e) {
-//                        continue;
-//                    }
-//
-//                }
-//
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        System.out.println("so the reader commences");
+        System.out.println("Graphhopper is ready!");
     }
+
     public com.example.demo.Instruction.Instruction getInstructions(Nav coords) {
 
 //        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
@@ -103,6 +70,6 @@ public class NavService {
         long timeInMs = path.getTime();
         InstructionList instructionList = path.getInstructions();
         PointList points = path.getPoints();
-        return new Instruction(distance,timeInMs,instructionList,points);
+        return new Instruction(distance, timeInMs, instructionList, points);
     }
 }

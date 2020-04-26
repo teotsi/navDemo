@@ -7,9 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public @Data class AccessPoint {
+public @Data
+class AccessPoint {
 
     @Id
     private String ssid; // the name of the network that the access point is connected to
@@ -23,9 +28,8 @@ public @Data class AccessPoint {
     public boolean equals(Object obj) {
         if (obj instanceof AccessPoint)
             return this.ssid.equals(((AccessPoint) (obj)).ssid);
-        else if (obj instanceof String){
+        else if (obj instanceof String) {
             return this.ssid.equals(obj);
-        }
-        else return false;
+        } else return false;
     }
 }
