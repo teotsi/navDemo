@@ -1,37 +1,35 @@
-const coords = {
-    Victoria: [
-        23.73014830000,
-        37.99269130000
-    ],
-    TheBigBadWolf: [
-        23.73160050000,
-        37.99219550000
-    ],
-    MotoPlace: [
-        23.74046130000,
-        37.99007600000
-    ]
-};
+const coords = {};
 
-
-let srcPlaces = document.querySelectorAll("#src-menu a");
+let srcMenu = document.querySelector("#src-menu");
 let source = document.querySelector("#source");
-srcPlaces.forEach(place => {
-    place.addEventListener("click", evt => {
-        source.value = place.innerHTML;
-    })
-});
 
-
-let dstPlaces = document.querySelectorAll("#dst-menu a");
+let dstMenu = document.querySelector("#dst-menu");
 let destination = document.querySelector("#destination");
-dstPlaces.forEach(place => {
-    place.addEventListener("click", evt => {
-        console.log(place.innerHTML);
-        destination.value = place.innerHTML;
-    })
-});
 
+function createOptions(locations, menu, label) {
+    locations.forEach((l) => {
+        let newLocationA = document.createElement("a");
+        newLocationA.href = "#";
+        newLocationA.className = "dropdown-item";
+        newLocationA.innerText = l.name;
+        newLocationA.addEventListener("click", evt => {
+            label.value = newLocationA.innerText;
+        });
+        menu.appendChild(newLocationA);
+
+    });
+}
+
+axios.get('/poi')
+    .then(function (response) {
+        let locations = response.data;
+        locations.forEach((l) => {
+            coords[l.name] = [l.lat, l.lon];
+        });
+        createOptions(locations, srcMenu, source);
+        createOptions(locations, dstMenu, destination);
+        console.log(coords)
+    });
 
 function submitForm(event) {
     let srcCoords = coords[source.value];
@@ -40,10 +38,10 @@ function submitForm(event) {
     console.log(destCoords);
 
     axios.post('/nav', {
-        srcLat: srcCoords[1],
-        srcLon: srcCoords[0],
-        destLat: destCoords[1],
-        destLon: destCoords[0]
+        srcLat: srcCoords[0],
+        srcLon: srcCoords[1],
+        destLat: destCoords[0],
+        destLon: destCoords[1]
     })
         .then(function (response) {
             let data = response.data;
@@ -69,6 +67,9 @@ function submitForm(event) {
             let grid = document.querySelector(".grid-wrapper");
             grid.appendChild(container);
             console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error.response);
         });
 
     event.preventDefault();

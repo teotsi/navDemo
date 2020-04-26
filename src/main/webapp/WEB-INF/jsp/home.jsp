@@ -23,12 +23,11 @@
                             aria-haspopup="true" aria-expanded="false" id="titledrop">Select
                     </button> <!--dropdown button-->
                     <div class="dropdown-menu" id="src-menu"><!-- setting dropdown items-->
-                        <a class="dropdown-item" href="#">Victoria</a>
-                        <a class="dropdown-item" href="#">TheBigBadWolf</a>
-                        <a class="dropdown-item" href="#">MotoPlace</a>
+                        <%--                        this will be filled with js--%>
+
                     </div>
                 </div>
-                <input class="form-control" type="text" name="title" id="source" value="Victoria" placeholder="Pick location">
+                <input class="form-control" type="text" name="title" id="source" placeholder="Pick location">
             </div>
 
             <label for="destination">Destination</label>
@@ -38,12 +37,10 @@
                             aria-haspopup="true" aria-expanded="false" id="titledrop">Select
                     </button> <!--dropdown button-->
                     <div class="dropdown-menu" id="dst-menu"><!-- setting dropdown items-->
-                        <a class="dropdown-item" href="#">Victoria</a>
-                        <a class="dropdown-item" href="#">TheBigBadWolf</a>
-                        <a class="dropdown-item" href="#">MotoPlace</a>
+<%--                        this will be filled with js--%>
                     </div>
                 </div>
-                <input class="form-control" type="text" name="title" id="destination" value="MotoPlace" placeholder="Pick location">
+                <input class="form-control" type="text" name="title" id="destination" placeholder="Pick location">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
