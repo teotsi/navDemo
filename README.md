@@ -19,12 +19,12 @@ For now the following endpoints have been declared:
 
 `GET /`: provides a simple web-based frontend for testing. Source and destination coordinates (as well as dropdown names) are provided automatically, just make sure your nodes have the `poi=yes` attribute (in case you are using a custom map and not the default one).
 
-`/access-point`: 📶 This is REST endpoint, which means there are `GET` and `POST` endpoints. There's no need for editing or deleting for now. Since this is REST, `GET /access-point/<id>` is also declared. By default there are not APs.
+`/access-point`: 📶 This is a REST endpoint, which means there are `GET` and `POST` endpoints. There's no need for editing or deleting for now. Since this is REST, `GET /access-point/<id>` is also declared. By default there are not APs.
 **Example for POST:**  
 The url should look like this 
 > https://localhost:8080/access-point  
 
-and in the http body add the Json form of am Accesspoin Object
+and in the http body add the Json form of an accessPoint Object
 ~~~json
 {
 	"ssid":"bil2l",
