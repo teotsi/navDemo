@@ -45,6 +45,9 @@
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    <div class="main-container instructions-container">
+
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

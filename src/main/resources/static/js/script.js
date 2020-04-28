@@ -6,6 +6,8 @@ let source = document.querySelector("#source");
 let dstMenu = document.querySelector("#dst-menu");
 let destination = document.querySelector("#destination");
 
+let instructionsContainer = document.querySelector(".instructions-container");
+
 function createOptions(locations, menu, label) {
     locations.forEach((l) => {
         let newLocationA = document.createElement("a");
@@ -45,27 +47,26 @@ function submitForm(event) {
     })
         .then(function (response) {
             let data = response.data;
-            let container = document.createElement("div");
-            container.className = "main-container";
-            container.style.gridRow = 5;
+            instructionsContainer.textContent = '';
+            instructionsContainer.style.display = "block";
             let h3 = document.createElement("h3");
             h3.innerText = "Details";
-            container.appendChild(h3);
+            instructionsContainer.appendChild(h3);
             let detailParagraph = document.createElement("p");
             detailParagraph.innerText = `Distance(m): ${data.distance}, time(ms): ${data.time}`;
-            container.appendChild(detailParagraph);
+            instructionsContainer.appendChild(detailParagraph);
 
             let instH3 = document.createElement("h3");
             instH3.innerText = "Instructions";
-            container.appendChild(instH3);
+            instructionsContainer.appendChild(instH3);
 
             data.instructions.forEach(instruction => {
                 let paragraph = document.createElement("p");
                 paragraph.innerText = JSON.stringify(instruction);
-                container.appendChild(paragraph);
+                instructionsContainer.appendChild(paragraph);
             });
             let grid = document.querySelector(".grid-wrapper");
-            grid.appendChild(container);
+            grid.appendChild(instructionsContainer);
             console.log(response);
         })
         .catch(function (error) {
