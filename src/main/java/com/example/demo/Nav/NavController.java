@@ -1,16 +1,17 @@
 package com.example.demo.Nav;
 
 import com.example.demo.Instruction.Instruction;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
+@RequiredArgsConstructor
 @RestController
 public class NavController {
 
-    @Autowired
-    private NavService service;
+
+    private final NavService service;
 
     @PostMapping("/nav")
     public Instruction getInstructionsFromPoint(@RequestBody Nav coords) {

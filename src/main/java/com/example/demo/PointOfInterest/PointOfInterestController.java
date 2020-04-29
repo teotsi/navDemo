@@ -1,16 +1,15 @@
 package com.example.demo.PointOfInterest;
 
-import com.example.demo.AccessPoint.AccessPoint;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 public class PointOfInterestController {
 
-    @Autowired
-    private PointOfInterestService service;
+    private final PointOfInterestService service;
 
     @GetMapping("/poi")
     public List<PointOfInterest> getPointsOfInterest(){

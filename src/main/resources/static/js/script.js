@@ -60,8 +60,15 @@ function submitForm(event) {
             container.appendChild(instH3);
 
             data.instructions.forEach(instruction => {
+                let h4 = document.createElement("h4");
+                h4.innerText = "Instruction: ";
+
                 let paragraph = document.createElement("p");
-                paragraph.innerText = JSON.stringify(instruction);
+                paragraph.innerHTML += `Sign: ${instruction.sign} <br> 
+                                       name: ${instruction.name} <br>
+                                       distance: ${instruction.distance} <br>
+                                       time(ms): ${instruction.time}`;
+                container.appendChild(h4);
                 container.appendChild(paragraph);
             });
             let grid = document.querySelector(".grid-wrapper");
