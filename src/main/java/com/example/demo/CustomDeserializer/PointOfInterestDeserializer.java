@@ -11,12 +11,21 @@ import java.io.IOException;
 public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInterest> {
     @Override
     public PointOfInterest deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
+        String name;
+        double lon,lat;
         JsonNode node = jsonParser.readValueAsTree();
-        JsonNode properties = node.get("properties");
-        String name = properties.get("name").asText();
-        JsonNode coordinates = node.get("geometry").get("coordinates");
-        double lon = coordinates.get(0).asDouble();
-        double lat = coordinates.get(1).asDouble();
+        if (node.has("name")){
+            name = node.get("name").asText();
+            lon = node.get("lon").asDouble();
+            lat = node.get("lat").asDouble();
+        }else {
+            JsonNode properties = node.get("properties");
+            name = properties.get("name").asText();
+            JsonNode coordinates = node.get("geometry").get("coordinates");
+            lon = coordinates.get(0).asDouble();
+            lat = coordinates.get(1).asDouble();
+        }
+
         return new PointOfInterest(name, lat, lon);
     }
 }

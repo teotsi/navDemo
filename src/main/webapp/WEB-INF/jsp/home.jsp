@@ -27,7 +27,7 @@
 
                     </div>
                 </div>
-                <input class="form-control" type="text" name="title" id="source" placeholder="Pick location">
+                <input class="form-control" type="text" name="title" id="source" placeholder="Pick location" disabled>
             </div>
 
             <label for="destination">Destination</label>
@@ -40,7 +40,7 @@
 <%--                        this will be filled with js--%>
                     </div>
                 </div>
-                <input class="form-control" type="text" name="title" id="destination" placeholder="Pick location">
+                <input class="form-control" type="text" name="title" id="destination" placeholder="Pick location" disabled>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
