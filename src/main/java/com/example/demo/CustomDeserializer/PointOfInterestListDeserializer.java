@@ -26,7 +26,6 @@ public class PointOfInterestListDeserializer extends JsonDeserializer<List<Point
         while (it.hasNext()) {
             JsonNode feature = it.next();
             JsonNode featureProperties = feature.get("properties");
-            JsonNode featureGeometry = feature.get("geometry");
             if (featureProperties.has("poi")) {
                 PointOfInterest poi = mapper.treeToValue(feature, PointOfInterest.class);
                 pointOfInterestList.add(poi);

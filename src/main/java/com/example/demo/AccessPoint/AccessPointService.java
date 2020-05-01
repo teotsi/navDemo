@@ -1,16 +1,16 @@
 package com.example.demo.AccessPoint;
 
 import com.example.demo.exception.FourOhFourException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class AccessPointService {
 
-    @Autowired
-    private AccessPointRepository accessPointRepository;
+    private final AccessPointRepository accessPointRepository;
 
     public List<AccessPoint> getAccessPoints() {
         return this.accessPointRepository.findAll();

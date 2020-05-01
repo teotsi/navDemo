@@ -1,15 +1,15 @@
 package com.example.demo.AccessPoint;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 public class AccessPointController {
 
-    @Autowired
-    private AccessPointService service;
+    private final AccessPointService service;
 
     @GetMapping("/access-point")
     public List<AccessPoint> getAccessPoints() {

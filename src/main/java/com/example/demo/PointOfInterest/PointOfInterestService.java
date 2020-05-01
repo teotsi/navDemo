@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
@@ -16,18 +16,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class PointOfInterestService {
 
-    @Autowired
-    private PointOfInterestRepository pointOfInterestRepository;
+    private final PointOfInterestRepository pointOfInterestRepository;
     @Value("${map.name}")
     private String mapName;
 
-
     @PostConstruct
-    private void readGeoJson() {
-
+    public void parseGeoJson() {
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule();
         module.addDeserializer(List.class, new PointOfInterestListDeserializer());
@@ -37,7 +35,7 @@ public class PointOfInterestService {
             JsonNode features = mapper.readTree(resource).get("features");
 
             List<PointOfInterest> pointsOfInterest = mapper.readValue(features.toString(),
-                    new TypeReference<List<PointOfInterest>>() {
+                    new TypeReference<>() {
                     });
             this.registerPointsOfInterest(pointsOfInterest);
         } catch (IOException e) {
