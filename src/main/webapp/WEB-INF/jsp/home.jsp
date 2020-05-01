@@ -37,16 +37,13 @@
                             aria-haspopup="true" aria-expanded="false" id="titledrop">Select
                     </button> <!--dropdown button-->
                     <div class="dropdown-menu" id="dst-menu"><!-- setting dropdown items-->
-<%--                        this will be filled with js--%>
+                        <%--                        this will be filled with js--%>
                     </div>
                 </div>
                 <input class="form-control" type="text" name="title" id="destination" placeholder="Pick location" disabled>
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
-    <div class="main-container instructions-container">
-
     </div>
 </div>
 
