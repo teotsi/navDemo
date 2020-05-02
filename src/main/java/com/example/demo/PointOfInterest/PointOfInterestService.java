@@ -21,27 +21,7 @@ import java.util.List;
 public class PointOfInterestService {
 
     private final PointOfInterestRepository pointOfInterestRepository;
-    @Value("${map.name}")
-    private String mapName;
 
-    @PostConstruct
-    public void parseGeoJson() {
-        ObjectMapper mapper = new ObjectMapper();
-        SimpleModule module = new SimpleModule();
-        module.addDeserializer(List.class, new PointOfInterestListDeserializer());
-        mapper.registerModule(module);
-        try {
-            InputStream resource = new ClassPathResource("maps/" + mapName + ".geojson").getInputStream();
-            JsonNode features = mapper.readTree(resource).get("features");
-
-            List<PointOfInterest> pointsOfInterest = mapper.readValue(features.toString(),
-                    new TypeReference<>() {
-                    });
-            this.registerPointsOfInterest(pointsOfInterest);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public List<PointOfInterest> getPointsOfInterest() {
         return this.pointOfInterestRepository.findAll();
