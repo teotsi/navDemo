@@ -7,21 +7,22 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/poi")
 public class PointOfInterestController {
 
     private final PointOfInterestService service;
 
-    @GetMapping("/poi")
+    @GetMapping("")
     public List<PointOfInterest> getPointsOfInterest(){
         return service.getPointsOfInterest();
     }
 
-    @GetMapping("/poi/{name}")
+    @GetMapping("/{name}")
     public PointOfInterest getPointOfInterest(@PathVariable String name){
         return service.getPointOfInterest(name);
     }
 
-    @PostMapping("/poi")
+    @PostMapping("")
     public void registerPointOfInterest(@RequestBody PointOfInterest pointOfInterest){
         service.registerPointOfInterest(pointOfInterest);
     }
