@@ -45,11 +45,6 @@ public class NavService {
     }
 
     public com.example.demo.Instruction.Instruction getInstructions(Nav coords) {
-//        QueryResult qr = index.findClosest(calculatedLat,calculatedLon, EdgeFilter.ALL_EDGES );
-
-//        QueryResult qr = index.findClosest(coords.getLat(), coords.getLon(), EdgeFilter.ALL_EDGES );
-//        EdgeIteratorState edge = qr.getClosestEdge();
-//        System.out.println(qr.getSnappedPoint());
         GHRequest req = new GHRequest(coords.getSrcLat(), coords.getSrcLon(), coords.getDestLat(), coords.getDestLon()).
                 setWeighting("fastest").
                 setVehicle("foot").

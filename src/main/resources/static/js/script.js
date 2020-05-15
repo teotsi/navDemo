@@ -64,19 +64,22 @@ function submitForm(event) {
                 h4.innerText = "Instruction: ";
 
                 let paragraph = document.createElement("p");
+                paragraph.classList.add('point-details');
                 paragraph.innerHTML += `Sign: ${instruction.sign} <br> 
                                        name: ${instruction.name} <br>
                                        distance: ${instruction.distance} <br>
-                                       time(ms): ${instruction.time}`;
+                                       time(ms): ${instruction.time} <br>
+                                       angle: ${instruction.angle} <br>
+                                       <span> points: ${JSON.stringify(instruction.points,
+                    null, 4)}</span>`;
                 container.appendChild(h4);
                 container.appendChild(paragraph);
             });
             let grid = document.querySelector(".grid-wrapper");
             grid.appendChild(container);
-            console.log(response);
         })
         .catch(function (error) {
-            console.log(error.response);
+            console.log(error);
         });
 
     event.preventDefault();
