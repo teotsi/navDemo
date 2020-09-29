@@ -12,12 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/nav")
 public class NavController {
 
-
     private final NavService service;
 
     @PostMapping("")
     public Instruction getInstructionsFromPoint(@RequestBody Nav coords) {
         return service.getInstructions(coords);
     }
-
 }
