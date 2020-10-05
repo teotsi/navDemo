@@ -3,39 +3,47 @@
   <bounds minlat='38.006367' minlon='23.7154484' maxlat='38.0083029' maxlon='23.7177765' origin='CGImap 0.8.1 (26653 thorn-02.openstreetmap.org)' />
   <node id='-104516' action='modify' visible='true' lat='38.00763247762' lon='23.71650851225' />
   <node id='-104565' action='modify' visible='true' lat='38.00768329148' lon='23.71644625435'>
+    <tag k='amenity' v='gate' />
     <tag k='name' v='door' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104566' action='modify' visible='true' lat='38.00766676179' lon='23.71646298059' />
   <node id='-104568' action='modify' visible='true' lat='38.00765514633' lon='23.71644341939' />
   <node id='-104570' action='modify' visible='true' lat='38.00763571277' lon='23.71646099612'>
+    <tag k='amenity' v='store' />
     <tag k='name' v='living room' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104572' action='modify' visible='true' lat='38.00767860062' lon='23.71642159024'>
+    <tag k='amenity' v='restaurant' />
     <tag k='name' v='kitchen' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104574' action='modify' visible='true' lat='38.00764263737' lon='23.71642272422' />
   <node id='-104576' action='modify' visible='true' lat='38.00763079853' lon='23.71642924462'>
+    <tag k='amenity' v='service' />
     <tag k='name' v='bedroom s' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104578' action='modify' visible='true' lat='38.00763258553' lon='23.71640741546'>
+    <tag k='amenity' v='toilets' />
     <tag k='name' v='bathroom' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104580' action='modify' visible='true' lat='38.00764822173' lon='23.7164176213' />
   <node id='-104582' action='modify' visible='true' lat='38.0076562632' lon='23.71642272422'>
+    <tag k='amenity' v='store' />
     <tag k='name' v='bedroom n' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104584' action='modify' visible='true' lat='38.00765939044' lon='23.71638813776'>
+    <tag k='amenity' v='store' />
     <tag k='name' v='semi' />
     <tag k='poi' v='yes' />
   </node>
   <node id='-104998' action='modify' visible='true' lat='38.00767807208' lon='23.71645153581' />
   <node id='-105000' action='modify' visible='true' lat='38.00768132529' lon='23.7164580104'>
+    <tag k='amenity' v='service' />
     <tag k='name' v='storage' />
     <tag k='poi' v='yes' />
   </node>

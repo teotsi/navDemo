@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "map.name",
+      "type": "java.lang.String",
+      "description": "Name of osm/geoJSON  map file pair."
+  }
+] }

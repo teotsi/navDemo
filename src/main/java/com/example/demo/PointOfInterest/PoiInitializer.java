@@ -1,6 +1,8 @@
 package com.example.demo.PointOfInterest;
 
 import com.example.demo.CustomDeserializer.PointOfInterestListDeserializer;
+import com.example.demo.utilities.FileType;
+import com.example.demo.utilities.utilities;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,7 +10,6 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class PoiInit implements CommandLineRunner {
+public class PoiInitializer implements CommandLineRunner {
     private final PointOfInterestRepository repository;
     @Value("${map.name}")
     private String mapName;
@@ -29,9 +30,8 @@ public class PoiInit implements CommandLineRunner {
         module.addDeserializer(List.class, new PointOfInterestListDeserializer());
         mapper.registerModule(module);
         try {
-            InputStream resource = new ClassPathResource("maps/" + mapName + ".geojson").getInputStream();
+            InputStream resource = utilities.getMapResourceStream(mapName, FileType.GEOJSON);
             JsonNode features = mapper.readTree(resource).get("features");
-
             List<PointOfInterest> pointsOfInterest = mapper.readValue(features.toString(),
                     new TypeReference<>() {
                     });

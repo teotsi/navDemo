@@ -21,5 +21,5 @@ public class PointOfInterest {
     @Id
     private String name;
     private double lat, lon;
-
+    private PointOfInterestType amenity;
 }

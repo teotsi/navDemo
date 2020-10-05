@@ -73,4 +73,4 @@ const submitForm = async (event)=>{
     grid.appendChild(container);
 }
 
-init().then(()=>{console.log('done')});
+init().then(()=>{console.log('Coordinates available!')});

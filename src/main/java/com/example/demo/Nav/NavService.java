@@ -1,6 +1,8 @@
 package com.example.demo.Nav;
 
 import com.example.demo.Instruction.Instruction;
+import com.example.demo.utilities.FileType;
+import com.example.demo.utilities.utilities;
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
 import com.graphhopper.GraphHopper;
@@ -10,16 +12,11 @@ import com.graphhopper.routing.util.EncodingManager;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Locale;
-import java.util.stream.Collectors;
 
 @Service
 public class NavService {
@@ -31,16 +28,14 @@ public class NavService {
 
     @PostConstruct
     private void initializeService() throws IOException {
-        gh = new GraphHopperOSM().forServer();
-        gh.setDataReaderFile(new ClassPathResource(
-                "maps/" + mapName + ".osm").getURI().getPath()); //setting map file
-        gh.setMinNetworkSize(0, 0);
-// where to store graphhopper files?
-        gh.setGraphHopperLocation("graphFolder");
-        gh.clean();
-        gh.setEncodingManager(EncodingManager.create("foot"));
-        gh.importOrLoad();
+        gh = new GraphHopperOSM().forServer()
+                .setDataReaderFile(utilities.getMapResourcePath(mapName, FileType.OSM))
+                .setMinNetworkSize(0, 0)
+                .setGraphHopperLocation("graphFolder")
+                .setEncodingManager(EncodingManager.create("foot"));
 
+        gh.clean();
+        gh.importOrLoad();
         System.out.println("Graphhopper is ready!");
     }
 
