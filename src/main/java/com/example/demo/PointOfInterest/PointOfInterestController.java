@@ -26,4 +26,9 @@ public class PointOfInterestController {
     public void registerPointOfInterest(@RequestBody PointOfInterest pointOfInterest){
         service.registerPointOfInterest(pointOfInterest);
     }
+
+    @DeleteMapping("/{name}")
+    public void deletePointOfInterest(@PathVariable String name) {
+        service.deletePointOfInterest(name);
+    }
 }

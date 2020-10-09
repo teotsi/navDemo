@@ -1,19 +1,10 @@
 package com.example.demo.PointOfInterest;
 
-import com.example.demo.CustomDeserializer.PointOfInterestListDeserializer;
 import com.example.demo.exception.FourOhFourException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -37,5 +28,13 @@ public class PointOfInterestService {
 
     private void registerPointsOfInterest(List<PointOfInterest> pointsOfInterest) {
         pointOfInterestRepository.saveAll(pointsOfInterest);
+    }
+
+    public void deletePointOfInterest(String name) {
+        try {
+            this.pointOfInterestRepository.deleteById(name);
+        } catch (EmptyResultDataAccessException ignored) {
+            
+        }
     }
 }
