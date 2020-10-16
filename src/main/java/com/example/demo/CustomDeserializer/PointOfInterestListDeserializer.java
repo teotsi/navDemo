@@ -1,6 +1,6 @@
 package com.example.demo.CustomDeserializer;
 
-import com.example.demo.PointOfInterest.PointOfInterest;
+import com.example.demo.Point.PointOfInterest;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;

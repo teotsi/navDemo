@@ -1,4 +1,4 @@
-package com.example.demo.PointOfInterest;
+package com.example.demo.Point;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

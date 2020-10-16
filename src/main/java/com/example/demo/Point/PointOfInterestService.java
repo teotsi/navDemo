@@ -1,4 +1,4 @@
-package com.example.demo.PointOfInterest;
+package com.example.demo.Point;
 
 import com.example.demo.exception.FourOhFourException;
 import lombok.RequiredArgsConstructor;

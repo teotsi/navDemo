@@ -1,25 +1,30 @@
-package com.example.demo.PointOfInterest;
+package com.example.demo.Point;
 
 import com.example.demo.CustomDeserializer.PointOfInterestDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @JsonDeserialize(using = PointOfInterestDeserializer.class)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class PointOfInterest {
+public class PointOfInterest extends Point {
 
-    @Id
-    private String name;
-    private double lat, lon;
     private PointOfInterestType amenity;
+
+    public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity) {
+        super(name, lat, lon);
+        this.amenity = amenity;
+    }
+
+
 }
