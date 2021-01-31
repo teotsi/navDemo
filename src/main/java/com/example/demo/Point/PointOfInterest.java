@@ -20,10 +20,18 @@ import javax.persistence.Entity;
 public class PointOfInterest extends Point {
 
     private PointOfInterestType amenity;
+    private boolean restricted;
 
     public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity) {
         super(name, lat, lon);
         this.amenity = amenity;
+        this.restricted = false;
+    }
+
+    public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity, boolean restricted) {
+        super(name, lat, lon);
+        this.amenity = amenity;
+        this.restricted = restricted;
     }
 
 

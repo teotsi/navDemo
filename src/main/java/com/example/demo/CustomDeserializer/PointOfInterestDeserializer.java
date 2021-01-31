@@ -13,15 +13,17 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
     @Override
     public PointOfInterest deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         String name;
-        double lon,lat;
+        double lon, lat;
         PointOfInterestType amenity;
+        boolean restricted;
         JsonNode node = jsonParser.readValueAsTree();
-        if (node.has("name")){
+
+        if (node.has("name")) {
             name = node.get("name").asText();
             lon = node.get("lon").asDouble();
             lat = node.get("lat").asDouble();
             amenity = PointOfInterestType.valueOfByName(node.get("amenity").asText());
-        }else {
+        } else {
             JsonNode properties = node.get("properties");
             name = properties.get("name").asText();
             amenity = PointOfInterestType.valueOfByName(properties.get("amenity").asText());
@@ -29,7 +31,10 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
             lon = coordinates.get(0).asDouble();
             lat = coordinates.get(1).asDouble();
         }
+        JsonNode restrictedNode = node.get("restricted");
+        restricted = node.get("restricted") != null && restrictedNode.asBoolean();
+        System.out.println(restricted);
 
-        return new PointOfInterest(name, lat, lon, amenity);
+        return new PointOfInterest(name, lat, lon, amenity, restricted);
     }
 }

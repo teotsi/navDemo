@@ -1,9 +1,9 @@
 package com.example.demo.Nav;
 
 import com.example.demo.Instruction.Instruction;
+import com.example.demo.Router.Router;
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
-import com.graphhopper.GraphHopper;
 import com.graphhopper.PathWrapper;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
@@ -16,14 +16,14 @@ import java.util.Locale;
 @Service
 public class NavService {
 
-    private final GraphHopper gh;
+    private Router router;
 
     public com.example.demo.Instruction.Instruction getInstructions(Nav coords) {
         GHRequest req = new GHRequest(coords.getSrcLat(), coords.getSrcLon(), coords.getDestLat(), coords.getDestLon()).
                 setWeighting("fastest").
                 setVehicle("foot").
                 setLocale(Locale.US);
-        GHResponse rsp = gh.route(req);
+        GHResponse rsp = router.getRoute(req);
 
         if (rsp.hasErrors()) {
             // handle them!
