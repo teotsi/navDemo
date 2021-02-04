@@ -7,16 +7,16 @@ import com.graphhopper.GHResponse;
 import com.graphhopper.PathWrapper;
 import com.graphhopper.util.InstructionList;
 import com.graphhopper.util.PointList;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Locale;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Service
 public class NavService {
 
-    private Router router;
+    private final Router router;
 
     public com.example.demo.Instruction.Instruction getInstructions(Nav coords) {
         GHRequest req = new GHRequest(coords.getSrcLat(), coords.getSrcLon(), coords.getDestLat(), coords.getDestLon()).

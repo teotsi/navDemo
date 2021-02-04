@@ -1,5 +1,6 @@
 package com.example.demo.Router;
 
+import com.example.demo.CustomGraphHopper;
 import com.graphhopper.GraphHopper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ public class RouterConfig {
         return new Router(createGraphHopper(), mapName);
     }
 
-    private GraphHopper createGraphHopper() throws IOException {
+    private CustomGraphHopper createGraphHopper() throws IOException {
         return Router.getGraphHopperInstance(mapName);
     }
 }

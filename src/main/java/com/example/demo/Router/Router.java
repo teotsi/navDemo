@@ -1,5 +1,6 @@
 package com.example.demo.Router;
 
+import com.example.demo.CustomGraphHopper;
 import com.example.demo.utilities.FileType;
 import com.example.demo.utilities.utilities;
 import com.graphhopper.GHRequest;
@@ -16,11 +17,11 @@ import java.io.IOException;
 @AllArgsConstructor
 public class Router {
     private final static Logger LOGGER = LoggerFactory.getLogger(Router.class);
-    private GraphHopper graphHopper;
+    private CustomGraphHopper graphHopper;
     private final String mapName;
 
-    public static GraphHopper getGraphHopperInstance(String mapName) throws IOException {
-        GraphHopper graphHopper = new GraphHopperOSM().forServer()
+    public static CustomGraphHopper getGraphHopperInstance(String mapName) throws IOException {
+        CustomGraphHopper graphHopper = (CustomGraphHopper) new CustomGraphHopper().forServer()
                 .setDataReaderFile(utilities.getMapResourcePath(mapName, FileType.OSM))
                 .setMinNetworkSize(0, 0)
                 .setGraphHopperLocation("graphFolder")
