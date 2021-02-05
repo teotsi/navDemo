@@ -1,13 +1,19 @@
 package com.example.demo.Point;
 
 public enum PointOfInterestType {
+    CLASSROOM,
+    CSLAB,
     GATE,
-    STORE,
+    HALL,
+    LIBRARY,
+    OFFICE,
     RESTAURANT,
     SERVICE,
-    TOILETS;
+    STORE,
+    TOILETS,
+    ;
 
-    public static PointOfInterestType valueOfByName(String name){
+    public static PointOfInterestType valueOfByName(String name) {
         return valueOf(name.toUpperCase());
     }
 }

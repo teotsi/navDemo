@@ -33,7 +33,6 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
         }
         JsonNode restrictedNode = node.get("restricted");
         restricted = node.get("restricted") != null && restrictedNode.asBoolean();
-        System.out.println(restricted);
 
         return new PointOfInterest(name, lat, lon, amenity, restricted);
     }

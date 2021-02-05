@@ -2,10 +2,10 @@ const srcMenu = document.querySelector("#src-menu");
 const source = document.querySelector("#source");
 const dstMenu = document.querySelector("#dst-menu");
 const destination = document.querySelector("#destination");
-
+const mainContainer = document.querySelector(".details");
 const coords = {};
 
-const createOptions = (locations, menu, label) =>{
+const createOptions = (locations, menu, label) => {
     locations.forEach((l) => {
         let newLocationA = document.createElement("a");
         newLocationA.href = "#";
@@ -46,7 +46,7 @@ const getInstructions = async (body = {}) => {
 }
 
 
-const submitForm = async (event)=>{
+const submitForm = async (event) => {
     event.preventDefault();
     let srcCoords = coords[source.value];
     let destCoords = coords[destination.value];
@@ -57,20 +57,20 @@ const submitForm = async (event)=>{
         destLat: destCoords[0],
         destLon: destCoords[1]
     });
-
-    const container = createMainContainer();
-    const detailParagraph = createDetailParagraph(distance,time);
+    const detailsH3 = createDetailH3();
+    const detailParagraph = createDetailParagraph(distance, time);
     const instH3 = createInstructionH3();
     const instructionDivs = createInstructionDivs(instructions);
 
-    container.appendChild(detailParagraph);
-    container.appendChild(instH3);
-    instructionDivs.forEach((instructionDiv)=>{
-       container.appendChild(instructionDiv);
+    mainContainer.innerHTML = "";
+    mainContainer.append(detailsH3);
+    mainContainer.appendChild(detailParagraph);
+    mainContainer.appendChild(instH3);
+    instructionDivs.forEach((instructionDiv) => {
+        mainContainer.appendChild(instructionDiv);
     });
-
-    let grid = document.querySelector(".grid-wrapper");
-    grid.appendChild(container);
 }
 
-init().then(()=>{console.log('Coordinates available!')});
+init().then(() => {
+    console.log('Coordinates available!')
+});
