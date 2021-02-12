@@ -23,6 +23,8 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
             lon = node.get("lon").asDouble();
             lat = node.get("lat").asDouble();
             amenity = PointOfInterestType.valueOfByName(node.get("amenity").asText());
+            JsonNode restrictedNode = node.get("restricted");
+            restricted = restrictedNode != null && restrictedNode.asBoolean();
         } else {
             JsonNode properties = node.get("properties");
             name = properties.get("name").asText();
@@ -30,10 +32,9 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
             JsonNode coordinates = node.get("geometry").get("coordinates");
             lon = coordinates.get(0).asDouble();
             lat = coordinates.get(1).asDouble();
+            JsonNode restrictedNode = properties.get("restricted");
+            restricted = restrictedNode != null && restrictedNode.asBoolean();
         }
-        JsonNode restrictedNode = node.get("restricted");
-        restricted = node.get("restricted") != null && restrictedNode.asBoolean();
-
         return new PointOfInterest(name, lat, lon, amenity, restricted);
     }
 }

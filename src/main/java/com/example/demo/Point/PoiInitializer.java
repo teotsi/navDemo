@@ -35,6 +35,7 @@ public class PoiInitializer implements CommandLineRunner {
             List<PointOfInterest> pointsOfInterest = mapper.readValue(features.toString(),
                     new TypeReference<>() {
                     });
+
             this.repository.saveAll(pointsOfInterest);
         } catch (IOException e) {
             e.printStackTrace();

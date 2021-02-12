@@ -14,7 +14,6 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
 @JsonDeserialize(using = PointOfInterestDeserializer.class)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PointOfInterest extends Point {
@@ -34,5 +33,9 @@ public class PointOfInterest extends Point {
         this.restricted = restricted;
     }
 
+    @Override
+    public String toString(){
+        return "PointOfInterest: amenity=" + amenity + ", name="+ this.name+", restricted="+ this.restricted;
+    }
 
 }
