@@ -38,4 +38,54 @@ and in the http body add the Json form of an accessPoint Object
 
 `/poi`: 🚩 Similar to the above endpoint, you can `GET` and `POST` specific Points of Interest. By default it is populated with nodes from that have the `poi=yes` tag in the `map.geojson` file.
 
-`nav`: 🧭 The "navigation"  endpoint. You can post source and destination coordinates and receive instructions. the `/` endpoint makes use of this to fetch the instructions.
+`/nav`: 🧭 The "navigation"  endpoint. You can `POST` source and destination coordinates and receive instructions. the `/` endpoint makes use of this to fetch the instructions.
+
+Example:
+
+If you POST the following to `/nav`...
+
+```json
+ {
+  "destLat": 37.9937662109,
+  "destLon": 23.73204655878,
+  "srcLat": 37.99445266073,
+  "srcLon": 23.73243212633
+}
+```
+
+Then the response will be a list of Instructions that you can use as you deem fit
+
+```json
+{
+  "distance": 125,
+  "instructions": [
+    {
+      "sign": 0,
+      "name": "corridor-to-d22",
+      "distance": 6.953,
+      "time": 5006,
+      "angle": "south-east"
+    },
+    {
+      "sign": 2,
+      "name": "main-to-derigny",
+      "distance": 53.462,
+      "time": 38489,
+      "angle": "south-west"
+    },
+    {
+      "sign": 4,
+      "name": "",
+      "distance": 0,
+      "time": 0,
+      "points": [
+        {
+          "lat": 37.993766239258846,
+          "lon": 23.732046507895703
+        }
+      ]
+    }
+  ],
+  "time": 90186
+}
+```
