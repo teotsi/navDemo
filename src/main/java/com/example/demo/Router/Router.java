@@ -6,7 +6,6 @@ import com.example.demo.utilities.utilities;
 import com.graphhopper.GHRequest;
 import com.graphhopper.GHResponse;
 import com.graphhopper.routing.util.EncodingManager;
-import com.graphhopper.util.EdgeExplorer;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

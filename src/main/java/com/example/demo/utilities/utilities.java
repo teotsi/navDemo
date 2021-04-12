@@ -3,6 +3,7 @@ package com.example.demo.utilities;
 import com.graphhopper.util.shapes.GHPoint3D;
 import org.springframework.core.io.ClassPathResource;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -29,7 +30,9 @@ public final class utilities {
     }
 
     public static String getMapResourcePath(String mapName, FileType mapType) throws IOException {
-        return getMapResource(mapName, mapType).getURI().getPath();
+        File file = new File("src");
+        String filePath = file.getAbsolutePath() +  File.separator +  "main" + File.separator +  "resources" + File.separator + "maps" ;
+        return filePath + File.separator + mapName + mapType;
     }
 
 }

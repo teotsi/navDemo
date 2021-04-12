@@ -34,8 +34,6 @@ public class SafeRouteWeighting extends FastestWeighting {
         double w = super.calcWeight(edgeState, reverse, prevOrNextEdgeId);
         System.out.println(restrictedIds);
         if (restrictedIds.contains(edgeState.getEdge())) {
-            System.out.println(edgeState.getName());
-            System.out.println(edgeState.getEdge());
             return w * 1000;
         } else {
             return w;

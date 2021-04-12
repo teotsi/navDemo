@@ -37,7 +37,6 @@ public class PointOfInterestListDeserializer extends JsonDeserializer<List<Point
             }
         }
         SafeRouteWeighting.setRestrictedPoints(restrictedPoints);
-        System.out.println(restrictedPoints);
         return pointOfInterestList;
     }
 }
