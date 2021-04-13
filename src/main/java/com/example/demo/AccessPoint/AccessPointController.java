@@ -7,7 +7,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/access-point")
+@RequestMapping("/api/access-point")
 public class AccessPointController {
 
     private final AccessPointService service;

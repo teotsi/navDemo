@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/nav")
+@RequestMapping("/api/nav")
 public class NavController {
 
     private final NavService service;
