@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @ToString
 @JsonDeserialize(using = PointOfInterestDeserializer.class)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class PointOfInterest {
+public class  PointOfInterest {
 
     @Id
     private String name;
