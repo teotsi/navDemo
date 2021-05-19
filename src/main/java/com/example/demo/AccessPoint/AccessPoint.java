@@ -3,8 +3,10 @@ package com.example.demo.AccessPoint;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 @Getter
@@ -21,9 +23,8 @@ class AccessPoint {
     private String bssid; // the mac address of each access point
     private int level;
     private double h; // a constant variable that goes from to 2 to 6 and depends by the environment
-    private double x; // the position of the access point in the x access
-    private double y; // the position of the access point in the y access
-
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Position position;
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof AccessPoint)
