@@ -32,7 +32,6 @@ public class SafeRouteWeighting extends FastestWeighting {
     @Override
     public double calcWeight(EdgeIteratorState edgeState, boolean reverse, int prevOrNextEdgeId) {
         double w = super.calcWeight(edgeState, reverse, prevOrNextEdgeId);
-        System.out.println(restrictedIds);
         if (restrictedIds.contains(edgeState.getEdge())) {
             return w * 1000;
         } else {
