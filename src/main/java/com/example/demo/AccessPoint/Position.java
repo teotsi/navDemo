@@ -33,15 +33,17 @@ public class Position implements Serializable
     }
 
     public double distance() {
-        double f1 = REFERENCE_LAT * Math.PI/180;
-        double f2 = REFERENCE_LAT * Math.PI/180;
-        double Df = (this.lat - REFERENCE_LAT) * Math.PI/180;
-        double Dl = (this.lon - REFERENCE_LON) * Math.PI/180;
-        double a = Math.sin(Df/2) * Math.sin(Df/2) +
-                Math.cos(f1) * Math.cos(f2) * Math.sin(Dl/2) * Math.sin(Dl/2);
+        double f1 = Math.cos(REFERENCE_LAT * Math.PI/180.0);
+        double f2 = Math.cos(this.lat * Math.PI/180.0);
+        double Df = (this.lat - REFERENCE_LAT) * Math.PI/180.0;
+        double Dl = (this.lon - REFERENCE_LON) * Math.PI/180.0;
+        double a = powSin(Df/2) + f1 * f2 * powSin(Dl/2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         double d = R * c;
         return d;
+    }
+    private double powSin(double df) {
+        return  (1 - Math.cos(2*df))/2 ;
     }
 
     public double bearing(){
@@ -67,9 +69,7 @@ public class Position implements Serializable
     }
 
     public double getPositionX() {
-        double distance = distance();
-        double bearing = bearing();
-        double x =  distance * Math.sin( bearing * Math.PI /180);
+        double x =  distance() * Math.sin( bearing() * Math.PI /180);
         this.x = x;
         return x;
     }
