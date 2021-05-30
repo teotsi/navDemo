@@ -45,12 +45,25 @@ public class Position implements Serializable
     }
 
     public double bearing(){
-        double y = Math.sin(this.lon-REFERENCE_LON) * Math.cos(this.lat);
-        double x = Math.cos(REFERENCE_LAT)*Math.sin(this.lat) -
-                Math.sin(REFERENCE_LAT)*Math.cos(this.lat)*Math.cos(this.lon-REFERENCE_LON);
-        double theta = Math.atan2(y, x);
-        double brng = (theta * 180/Math.PI + 360) % 360;
-        return brng;
+        double lat1 = Math.toRadians(REFERENCE_LAT);
+        double lon1 = Math.toRadians(REFERENCE_LON);
+        double lat2 = Math.toRadians(lat);
+        double lon2 = Math.toRadians(lon);
+
+        double dl = lon2-lon1;
+        double x = Math.cos(lat2) * Math.sin(dl);
+        double y = Math.cos(lat1)*Math.sin(lat2) -
+                Math.sin(lat1)*Math.cos(lat2)* Math.cos(dl);
+        double theta = Math.atan2(x, y);
+        return Math.toDegrees(theta);
+    }
+
+    public double getLatFromY() {
+        return  REFERENCE_LAT + (180/Math.PI) * (y / 6378137);
+    }
+
+    public double getLonFromX() {
+        return  REFERENCE_LON + (180/Math.PI) * (x / 6378137)/Math.cos(Math.toRadians(REFERENCE_LAT));
     }
 
     public double getPositionX() {
