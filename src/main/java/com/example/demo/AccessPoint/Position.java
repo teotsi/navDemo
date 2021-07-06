@@ -33,30 +33,43 @@ public class Position implements Serializable
     }
 
     public double distance() {
-        double f1 = REFERENCE_LAT * Math.PI/180;
-        double f2 = REFERENCE_LAT * Math.PI/180;
-        double Df = (this.lat - REFERENCE_LAT) * Math.PI/180;
-        double Dl = (this.lon - REFERENCE_LON) * Math.PI/180;
-        double a = Math.sin(Df/2) * Math.sin(Df/2) +
-                Math.cos(f1) * Math.cos(f2) * Math.sin(Dl/2) * Math.sin(Dl/2);
+        double f1 = Math.cos(REFERENCE_LAT * Math.PI/180.0);
+        double f2 = Math.cos(this.lat * Math.PI/180.0);
+        double Df = (this.lat - REFERENCE_LAT) * Math.PI/180.0;
+        double Dl = (this.lon - REFERENCE_LON) * Math.PI/180.0;
+        double a = powSin(Df/2) + f1 * f2 * powSin(Dl/2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         double d = R * c;
         return d;
     }
+    private double powSin(double df) {
+        return  (1 - Math.cos(2*df))/2 ;
+    }
 
     public double bearing(){
-        double y = Math.sin(this.lon-REFERENCE_LON) * Math.cos(this.lat);
-        double x = Math.cos(REFERENCE_LAT)*Math.sin(this.lat) -
-                Math.sin(REFERENCE_LAT)*Math.cos(this.lat)*Math.cos(this.lon-REFERENCE_LON);
-        double theta = Math.atan2(y, x);
-        double brng = (theta * 180/Math.PI + 360) % 360;
-        return brng;
+        double lat1 = Math.toRadians(REFERENCE_LAT);
+        double lon1 = Math.toRadians(REFERENCE_LON);
+        double lat2 = Math.toRadians(lat);
+        double lon2 = Math.toRadians(lon);
+
+        double dl = lon2-lon1;
+        double x = Math.cos(lat2) * Math.sin(dl);
+        double y = Math.cos(lat1)*Math.sin(lat2) -
+                Math.sin(lat1)*Math.cos(lat2)* Math.cos(dl);
+        double theta = Math.atan2(x, y);
+        return Math.toDegrees(theta);
+    }
+
+    public double getLatFromY() {
+        return  REFERENCE_LAT + (180/Math.PI) * (y / 6378137);
+    }
+
+    public double getLonFromX() {
+        return  REFERENCE_LON + (180/Math.PI) * (x / 6378137)/Math.cos(Math.toRadians(REFERENCE_LAT));
     }
 
     public double getPositionX() {
-        double distance = distance();
-        double bearing = bearing();
-        double x =  distance * Math.sin( bearing * Math.PI /180);
+        double x =  distance() * Math.sin( bearing() * Math.PI /180);
         this.x = x;
         return x;
     }

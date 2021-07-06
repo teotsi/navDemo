@@ -13,7 +13,7 @@ class AccessPointTests {
         accessPoint.setPosition(new Position(37.993741495845455, 23.732428854348367));
         double x = accessPoint.getPosition().getPositionX();
         double y = accessPoint.getPosition().getPositionY();
-        assertEquals(0.1, Math.round(y * 100.0)/ 100.0 );
+        assertEquals(0.12, Math.round(y * 100.0)/ 100.0 );
         assertEquals(40.02, Math.round(x * 100.0)/ 100.0 );
     }
 
