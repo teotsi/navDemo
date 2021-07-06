@@ -2,12 +2,6 @@
 {
     "type": "FeatureCollection",
     "generator": "JOSM",
-    "bbox": [
-        23.73182060000,
-        37.99339790000,
-        23.73320460000,
-        37.99476340000
-    ],
     "features": [
         {
             "type": "Feature",
@@ -90,6 +84,146 @@
         {
             "type": "Feature",
             "properties": {
+                "landuse": "residential"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73074260000,
+                            37.99488160000
+                        ],
+                        [
+                            23.73190050000,
+                            37.99471060000
+                        ],
+                        [
+                            23.73209960000,
+                            37.99556800000
+                        ],
+                        [
+                            23.73095220000,
+                            37.99575410000
+                        ],
+                        [
+                            23.73074260000,
+                            37.99488160000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73228390000,
+                    37.99545410000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "bus": "yes",
+                "highway": "bus_stop",
+                "name": "Πανελλήνιος",
+                "network": "ΟΣΥ",
+                "operator": "ΟΑΣΑ",
+                "passenger_information_display": "yes",
+                "public_transport": "platform",
+                "ref": "060550",
+                "route_ref": "2;4;022;224",
+                "shelter": "yes",
+                "tickets:public_transport": "no",
+                "trolleybus": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73311010000,
+                    37.99423320000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "secondary",
+                "lanes": "3",
+                "name": "Μαυροματαίων",
+                "oneway": "yes",
+                "source": "Yahoo",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73253360000,
+                        37.99209710000
+                    ],
+                    [
+                        23.73267000000,
+                        37.99269030000
+                    ],
+                    [
+                        23.73275770000,
+                        37.99306010000
+                    ],
+                    [
+                        23.73284550000,
+                        37.99342050000
+                    ],
+                    [
+                        23.73285790000,
+                        37.99347730000
+                    ],
+                    [
+                        23.73309290000,
+                        37.99449070000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "crossing": "marked",
+                "highway": "crossing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73201220000,
+                    37.99482760000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:housenumber": "2",
+                "addr:street": "Αντωνιάδου"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73199770000,
+                    37.99355090000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
                 "alt_name": "Πατησίων",
                 "highway": "primary",
                 "int_name": "28is Oktovriou",
@@ -105,24 +239,32 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        23.73220160000,
-                        37.99560120000
+                        23.73164680000,
+                        37.99284860000
                     ],
                     [
-                        23.73206830000,
-                        37.99505670000
+                        23.73166650000,
+                        37.99292710000
                     ],
                     [
-                        23.73202150000,
-                        37.99486560000
+                        23.73173820000,
+                        37.99322260000
                     ],
                     [
-                        23.73201220000,
-                        37.99482760000
+                        23.73176500000,
+                        37.99333200000
                     ],
                     [
-                        23.73197110000,
-                        37.99465960000
+                        23.73183820000,
+                        37.99363140000
+                    ],
+                    [
+                        23.73206750000,
+                        37.99456920000
+                    ],
+                    [
+                        23.73208540000,
+                        37.99464240000
                     ]
                 ]
             }
@@ -130,15 +272,525 @@
         {
             "type": "Feature",
             "properties": {
-                "amenity": "classroom",
-                "name": "D22",
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73257690000,
+                            37.99360590000
+                        ],
+                        [
+                            23.73271880000,
+                            37.99358510000
+                        ],
+                        [
+                            23.73276380000,
+                            37.99377620000
+                        ],
+                        [
+                            23.73262190000,
+                            37.99379690000
+                        ],
+                        [
+                            23.73261930000,
+                            37.99378590000
+                        ],
+                        [
+                            23.73257690000,
+                            37.99360590000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:housenumber": "84",
+                "addr:street": "28ης Οκτωβρίου",
+                "amenity": "post_office",
+                "building": "yes",
+                "name": "Ελληνικά Ταχυδρομεία"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73221090000,
+                            37.99484170000
+                        ],
+                        [
+                            23.73217410000,
+                            37.99470260000
+                        ],
+                        [
+                            23.73237100000,
+                            37.99467030000
+                        ],
+                        [
+                            23.73240130000,
+                            37.99478510000
+                        ],
+                        [
+                            23.73231700000,
+                            37.99479900000
+                        ],
+                        [
+                            23.73232340000,
+                            37.99482330000
+                        ],
+                        [
+                            23.73221090000,
+                            37.99484170000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73186670000,
+                            37.99343350000
+                        ],
+                        [
+                            23.73190270000,
+                            37.99359030000
+                        ],
+                        [
+                            23.73207790000,
+                            37.99356530000
+                        ],
+                        [
+                            23.73205640000,
+                            37.99347150000
+                        ],
+                        [
+                            23.73203410000,
+                            37.99347460000
+                        ],
+                        [
+                            23.73201960000,
+                            37.99341170000
+                        ],
+                        [
+                            23.73186670000,
+                            37.99343350000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73169380000,
+                            37.99476440000
+                        ],
+                        [
+                            23.73185730000,
+                            37.99474060000
+                        ],
+                        [
+                            23.73189980000,
+                            37.99492220000
+                        ],
+                        [
+                            23.73173630000,
+                            37.99494600000
+                        ],
+                        [
+                            23.73169380000,
+                            37.99476440000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-d24"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73266816072,
+                        37.99443892123
+                    ],
+                    [
+                        23.73262792759,
+                        37.99439083295
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "residential",
+                "name": "Αντωνιάδου",
+                "name:el": "Αντωνιάδου",
+                "oneway": "yes",
+                "source": "Yahoo",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73285790000,
+                        37.99347730000
+                    ],
+                    [
+                        23.73183820000,
+                        37.99363140000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "alt_name": "Πατησίων",
+                "highway": "primary",
+                "int_name": "28is Oktovriou",
+                "lanes": "3",
+                "lit": "yes",
+                "name": "28ης Οκτωβρίου",
+                "oneway": "yes",
+                "ref": "ΕΟ1",
+                "sidewalk": "right",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73208540000,
+                        37.99464240000
+                    ],
+                    [
+                        23.73212830000,
+                        37.99481240000
+                    ],
+                    [
+                        23.73228390000,
+                        37.99545410000
+                    ],
+                    [
+                        23.73231560000,
+                        37.99558380000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "landuse": "residential"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73236250000,
+                            37.99554490000
+                        ],
+                        [
+                            23.73318060000,
+                            37.99540860000
+                        ],
+                        [
+                            23.73321000000,
+                            37.99535910000
+                        ],
+                        [
+                            23.73303430000,
+                            37.99454310000
+                        ],
+                        [
+                            23.73280010000,
+                            37.99351630000
+                        ],
+                        [
+                            23.73188280000,
+                            37.99365450000
+                        ],
+                        [
+                            23.73213440000,
+                            37.99468270000
+                        ],
+                        [
+                            23.73236250000,
+                            37.99554490000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:housenumber": "8",
+                "addr:street": "Δεριγνύ",
+                "amenity": "cafe",
+                "name": "Moak"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73260250000,
+                    37.99472790000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73264170000,
+                            37.99462590000
+                        ],
+                        [
+                            23.73279250000,
+                            37.99460120000
+                        ],
+                        [
+                            23.73283230000,
+                            37.99475200000
+                        ],
+                        [
+                            23.73283750000,
+                            37.99477150000
+                        ],
+                        [
+                            23.73268670000,
+                            37.99479630000
+                        ],
+                        [
+                            23.73264170000,
+                            37.99462590000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-a23"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73223919623,
+                        37.99380871964
+                    ],
+                    [
+                        23.73226113550,
+                        37.99373344716
+                    ],
+                    [
+                        23.73236467404,
+                        37.99378739400
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "commercial",
+                "name": "Sygklitos",
                 "poi": "yes"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    23.73243212633,
-                    37.99445266073
+                    23.73267956011,
+                    37.99419847952
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "antoniadou-corridor"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73243614964,
+                        37.99377836519
+                    ],
+                    [
+                        23.73236467404,
+                        37.99378739400
+                    ],
+                    [
+                        23.73223919623,
+                        37.99380871964
+                    ],
+                    [
+                        23.73222911522,
+                        37.99381027333
+                    ],
+                    [
+                        23.73212910852,
+                        37.99382568635
+                    ],
+                    [
+                        23.73210355572,
+                        37.99382962455
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "commercial",
+                "name": "covid-spot",
+                "poi": "yes",
+                "restricted": "true"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73251633273,
+                    37.99405701999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-a21"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73252868585,
+                        37.99376251177
+                    ],
+                    [
+                        23.73253069751,
+                        37.99374295922
+                    ],
+                    [
+                        23.73248375885,
+                        37.99369011445
+                    ],
+                    [
+                        23.73243547909,
+                        37.99375775574
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-d22"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73243212633,
+                        37.99445266073
+                    ],
+                    [
+                        23.73245894842,
+                        37.99441936885
+                    ],
+                    [
+                        23.73247906499,
+                        37.99440245869
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "barrier": "hedge"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73176270000,
+                        37.99356850000
+                    ],
+                    [
+                        23.73200270000,
+                        37.99453810000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "shop": "kiosk"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73307100000,
+                    37.99399770000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73309290000,
+                    37.99449070000
                 ]
             }
         },
@@ -261,24 +913,629 @@
         {
             "type": "Feature",
             "properties": {
+                "crossing": "marked",
+                "highway": "crossing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73212830000,
+                    37.99481240000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "leisure": "sports_centre",
+                "name": "Πανελλήνιος Γυμναστικός Σύλλογος",
+                "name:el": "Πανελλήνιος Γυμναστικός Σύλλογος",
+                "sport": "gymnastics"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73329200000,
+                            37.99515360000
+                        ],
+                        [
+                            23.73330900000,
+                            37.99517910000
+                        ],
+                        [
+                            23.73333360000,
+                            37.99520100000
+                        ],
+                        [
+                            23.73335110000,
+                            37.99521370000
+                        ],
+                        [
+                            23.73337150000,
+                            37.99522630000
+                        ],
+                        [
+                            23.73339360000,
+                            37.99523530000
+                        ],
+                        [
+                            23.73341840000,
+                            37.99524370000
+                        ],
+                        [
+                            23.73344170000,
+                            37.99525000000
+                        ],
+                        [
+                            23.73347320000,
+                            37.99525210000
+                        ],
+                        [
+                            23.73526470000,
+                            37.99500960000
+                        ],
+                        [
+                            23.73493770000,
+                            37.99372980000
+                        ],
+                        [
+                            23.73309760000,
+                            37.99400810000
+                        ],
+                        [
+                            23.73302240000,
+                            37.99401930000
+                        ],
+                        [
+                            23.73329200000,
+                            37.99515360000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "barrier": "gate",
+                "opening_hours": "off"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73298730000,
+                    37.99334720000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:housenumber": "8",
+                "addr:street": "Δεριγνύ",
+                "name": "Print easy",
+                "shop": "copyshop"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73252960000,
+                    37.99472590000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73167670000,
+                            37.99466910000
+                        ],
+                        [
+                            23.73183390000,
+                            37.99464730000
+                        ],
+                        [
+                            23.73177270000,
+                            37.99442020000
+                        ],
+                        [
+                            23.73166140000,
+                            37.99443530000
+                        ],
+                        [
+                            23.73167660000,
+                            37.99450360000
+                        ],
+                        [
+                            23.73166180000,
+                            37.99450570000
+                        ],
+                        [
+                            23.73167880000,
+                            37.99458200000
+                        ],
+                        [
+                            23.73165790000,
+                            37.99458490000
+                        ],
+                        [
+                            23.73167670000,
+                            37.99466910000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:housenumber": "8",
+                "addr:street": "Αντωνιάδου"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73253410000,
+                    37.99346850000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "ΟΤΕ",
+                "network": "ΟΣΥ",
+                "public_transport": "stop_position",
+                "ref": "061064",
+                "route_ref": "2;3;4;5;11",
+                "trolleybus": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73156770000,
+                    37.99301180000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73156020000,
+                    37.99298120000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
                 "highway": "pedestrian",
-                "name": "corridor-to-a23"
+                "name": "corridor-to-sygklito"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        23.73223919623,
-                        37.99380871964
+                        23.73267956011,
+                        37.99419847952
                     ],
                     [
-                        23.73226113550,
-                        37.99373344716
+                        23.73264938526,
+                        37.99419953641
                     ],
                     [
-                        23.73236467404,
-                        37.99378739400
+                        23.73265027820,
+                        37.99415755354
                     ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73206750000,
+                    37.99456920000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "crossing": "marked",
+                "highway": "crossing"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73155110000,
+                    37.99294430000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "secondary",
+                "lanes": "2",
+                "name": "Δεριγνύ",
+                "oneway": "yes",
+                "source": "Yahoo",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.72722900000,
+                        37.99537360000
+                    ],
+                    [
+                        23.72834520000,
+                        37.99520550000
+                    ],
+                    [
+                        23.72872450000,
+                        37.99514840000
+                    ],
+                    [
+                        23.72935510000,
+                        37.99505350000
+                    ],
+                    [
+                        23.72946260000,
+                        37.99503730000
+                    ],
+                    [
+                        23.72991300000,
+                        37.99496950000
+                    ],
+                    [
+                        23.73056710000,
+                        37.99487100000
+                    ],
+                    [
+                        23.73067430000,
+                        37.99485490000
+                    ],
+                    [
+                        23.73190080000,
+                        37.99467020000
+                    ],
+                    [
+                        23.73197110000,
+                        37.99465960000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "bus": "yes",
+                "name": "ΟΤΕ Πεδίου Άρεως",
+                "network": "ΟΣΥ",
+                "operator": "ΟΑΣΑ",
+                "public_transport": "stop_position",
+                "ref": "060475",
+                "trolleybus": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73176500000,
+                    37.99333200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "commercial",
+                "name": "library",
+                "poi": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73227253489,
+                    37.99393689918
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:country": "GR",
+                "addr:housenumber": "29",
+                "addr:postcode": "10434",
+                "addr:street": "Μαυροματαίων"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73264220000,
+                    37.99340820000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-cslab1"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73239792816,
+                        37.99439400361
+                    ],
+                    [
+                        23.73247906499,
+                        37.99440245869
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "A22",
+                "poi": "yes",
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73237378828,
+                    37.99371759373
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-d21"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73255617850,
+                        37.99447009933
+                    ],
+                    [
+                        23.73254544966,
+                        37.99442623861
+                    ],
+                    [
+                        23.73258568279,
+                        37.99438079254
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "D21",
+                "poi": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73255617850,
+                    37.99447009933
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "commercial",
+                "name": "AntiPrytaneia",
+                "poi": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73261049323,
+                    37.99420746307
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73240860000,
+                            37.99350940000
+                        ],
+                        [
+                            23.73226190000,
+                            37.99353030000
+                        ],
+                        [
+                            23.73223450000,
+                            37.99341070000
+                        ],
+                        [
+                            23.73238110000,
+                            37.99338980000
+                        ],
+                        [
+                            23.73240860000,
+                            37.99350940000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "A25",
+                "poi": "yes",
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73204655878,
+                    37.99376621090
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-antiprytaneia"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73261049323,
+                        37.99420746307
+                    ],
+                    [
+                        23.73260378771,
+                        37.99416465908
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "public_transport": "stop_position",
+                "trolleybus": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73175110000,
+                    37.99376100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "commercial",
+                "name": "Teleton",
+                "poi": "yes",
+                "restricted": "false"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73259507053,
+                    37.99404470210
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "secondary",
+                "lanes": "3",
+                "lit": "yes",
+                "name": "Μαυροματαίων",
+                "oneway": "yes",
+                "source": "Yahoo",
+                "surface": "asphalt",
+                "turn:lanes": "left|through;right|right"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73309290000,
+                        37.99449070000
+                    ],
+                    [
+                        23.73325310000,
+                        37.99516990000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "button_operated": "no",
+                "crossing": "marked",
+                "highway": "crossing",
+                "tactile_paving": "yes",
+                "traffic_signals:sound": "no"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73166650000,
+                    37.99292710000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73215250604,
+                    37.99374982903
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73056710000,
+                    37.99487100000
                 ]
             }
         },
@@ -327,156 +1584,6 @@
             "type": "Feature",
             "properties": {
                 "highway": "pedestrian",
-                "name": "corridor-to-cslab1"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73239792816,
-                        37.99439400361
-                    ],
-                    [
-                        23.73247906499,
-                        37.99440245869
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "derigny-corridor"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73247906499,
-                        37.99440245869
-                    ],
-                    [
-                        23.73258568279,
-                        37.99438079254
-                    ],
-                    [
-                        23.73262792759,
-                        37.99439083295
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "extreme"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73227253489,
-                        37.99393689918
-                    ],
-                    [
-                        23.73211897843,
-                        37.99396596371
-                    ],
-                    [
-                        23.73239792816,
-                        37.99439400361
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "hall",
-                "name": "covid-spot",
-                "poi": "yes",
-                "restricted": "true"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73251633273,
-                    37.99405701999
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73169380000,
-                            37.99476440000
-                        ],
-                        [
-                            23.73185730000,
-                            37.99474060000
-                        ],
-                        [
-                            23.73189980000,
-                            37.99492220000
-                        ],
-                        [
-                            23.73173630000,
-                            37.99494600000
-                        ],
-                        [
-                            23.73169380000,
-                            37.99476440000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "landuse": "residential"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73074260000,
-                            37.99488160000
-                        ],
-                        [
-                            23.73190050000,
-                            37.99471060000
-                        ],
-                        [
-                            23.73209960000,
-                            37.99556800000
-                        ],
-                        [
-                            23.73095220000,
-                            37.99575410000
-                        ],
-                        [
-                            23.73074260000,
-                            37.99488160000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
                 "name": "stairs-to-antoniadou"
             },
             "geometry": {
@@ -504,23 +1611,40 @@
         {
             "type": "Feature",
             "properties": {
+                "addr:city": "Αθήνα",
+                "addr:street": "Δεριγνύ 10",
+                "amenity": "theatre",
+                "name": "Θέατρο Αθηνά",
+                "phone": "2108237330"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73244730000,
+                    37.99471870000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
                 "highway": "pedestrian",
-                "name": "corridor-to-d21"
+                "name": "stairs-to-derigny"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        23.73255617850,
-                        37.99447009933
+                        23.73257227175,
+                        37.99426612034
                     ],
                     [
-                        23.73254544966,
-                        37.99442623861
+                        23.73258098893,
+                        37.99425502302
                     ],
                     [
-                        23.73258568279,
-                        37.99438079254
+                        23.73256757788,
+                        37.99420904840
                     ]
                 ]
             }
@@ -528,38 +1652,27 @@
         {
             "type": "Feature",
             "properties": {
-                "highway": "traffic_signals"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73156020000,
-                    37.99298120000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "secondary",
-                "lanes": "2",
-                "lit": "yes",
-                "name": "Δεριγνύ",
-                "name:el": "Δεριγνύ",
-                "oneway": "yes",
-                "source": "Yahoo",
-                "surface": "asphalt"
+                "highway": "pedestrian",
+                "name": "main-to-teleton"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        23.73197110000,
-                        37.99465960000
+                        23.73249532207,
+                        37.99397120462
                     ],
                     [
-                        23.73208540000,
-                        37.99464240000
+                        23.73252667420,
+                        37.99396384992
+                    ],
+                    [
+                        23.73259507053,
+                        37.99404470210
+                    ],
+                    [
+                        23.73251633273,
+                        37.99405701999
                     ]
                 ]
             }
@@ -567,14 +1680,53 @@
         {
             "type": "Feature",
             "properties": {
-                "bus": "yes",
-                "public_transport": "stop_position"
+                "building": "yes"
             },
             "geometry": {
-                "type": "Point",
+                "type": "Polygon",
                 "coordinates": [
-                    23.73186890000,
-                    37.99424230000
+                    [
+                        [
+                            23.73265470000,
+                            37.99330770000
+                        ],
+                        [
+                            23.73269180000,
+                            37.99346900000
+                        ],
+                        [
+                            23.73240860000,
+                            37.99350940000
+                        ],
+                        [
+                            23.73238110000,
+                            37.99338980000
+                        ],
+                        [
+                            23.73237150000,
+                            37.99334810000
+                        ],
+                        [
+                            23.73247780000,
+                            37.99333290000
+                        ],
+                        [
+                            23.73248920000,
+                            37.99338220000
+                        ],
+                        [
+                            23.73254110000,
+                            37.99337480000
+                        ],
+                        [
+                            23.73252980000,
+                            37.99332550000
+                        ],
+                        [
+                            23.73265470000,
+                            37.99330770000
+                        ]
+                    ]
                 ]
             }
         },
@@ -654,59 +1806,22 @@
         {
             "type": "Feature",
             "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-d24"
+                "highway": "footway"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        23.73266816072,
-                        37.99443892123
+                        23.73337690000,
+                        37.99314590000
                     ],
                     [
-                        23.73262792759,
-                        37.99439083295
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "secondary",
-                "lanes": "3",
-                "name": "Μαυροματαίων",
-                "oneway": "yes",
-                "source": "Yahoo",
-                "surface": "asphalt"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73253360000,
-                        37.99209710000
-                    ],
-                    [
-                        23.73267000000,
-                        37.99269030000
-                    ],
-                    [
-                        23.73275770000,
-                        37.99306010000
+                        23.73298730000,
+                        37.99334720000
                     ],
                     [
                         23.73284550000,
                         37.99342050000
-                    ],
-                    [
-                        23.73285790000,
-                        37.99347730000
-                    ],
-                    [
-                        23.73309290000,
-                        37.99449070000
                     ]
                 ]
             }
@@ -714,70 +1829,79 @@
         {
             "type": "Feature",
             "properties": {
-                "leisure": "sports_centre",
-                "name": "Πανελλήνιος Γυμναστικός Σύλλογος",
-                "name:el": "Πανελλήνιος Γυμναστικός Σύλλογος",
-                "sport": "gymnastics"
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.72935510000,
+                    37.99505350000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "bus": "yes",
+                "public_transport": "stop_position"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73186890000,
+                    37.99424230000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "main-to-derigny"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73258568279,
+                        37.99438079254
+                    ],
+                    [
+                        23.73257227175,
+                        37.99426612034
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "landuse": "residential"
             },
             "geometry": {
                 "type": "Polygon",
                 "coordinates": [
                     [
                         [
-                            23.73329200000,
-                            37.99515360000
+                            23.73072740000,
+                            37.99483410000
                         ],
                         [
-                            23.73330900000,
-                            37.99517910000
+                            23.73190520000,
+                            37.99465730000
                         ],
                         [
-                            23.73333360000,
-                            37.99520100000
+                            23.73148390000,
+                            37.99289980000
                         ],
                         [
-                            23.73335110000,
-                            37.99521370000
+                            23.73027140000,
+                            37.99309060000
                         ],
                         [
-                            23.73337150000,
-                            37.99522630000
-                        ],
-                        [
-                            23.73339360000,
-                            37.99523530000
-                        ],
-                        [
-                            23.73341840000,
-                            37.99524370000
-                        ],
-                        [
-                            23.73344170000,
-                            37.99525000000
-                        ],
-                        [
-                            23.73347320000,
-                            37.99525210000
-                        ],
-                        [
-                            23.73526470000,
-                            37.99500960000
-                        ],
-                        [
-                            23.73493770000,
-                            37.99372980000
-                        ],
-                        [
-                            23.73309760000,
-                            37.99400810000
-                        ],
-                        [
-                            23.73302240000,
-                            37.99401930000
-                        ],
-                        [
-                            23.73329200000,
-                            37.99515360000
+                            23.73072740000,
+                            37.99483410000
                         ]
                     ]
                 ]
@@ -787,35 +1911,128 @@
             "type": "Feature",
             "properties": {
                 "highway": "pedestrian",
-                "name": "antoniadou-corridor"
+                "name": "corridor-to-prytaneia"
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
-                        23.73243614964,
-                        37.99377836519
+                        23.73276069693,
+                        37.99416307375
                     ],
                     [
-                        23.73236467404,
-                        37.99378739400
-                    ],
-                    [
-                        23.73223919623,
-                        37.99380871964
-                    ],
-                    [
-                        23.73222911522,
-                        37.99381027333
-                    ],
-                    [
-                        23.73212910852,
-                        37.99382568635
-                    ],
-                    [
-                        23.73210355572,
-                        37.99382962455
+                        23.73271442883,
+                        37.99414774886
                     ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "alt_name": "Πατησίων",
+                "highway": "primary",
+                "int_name": "28is Oktovriou",
+                "lanes": "3",
+                "lit": "yes",
+                "name": "28ης Οκτωβρίου",
+                "oneway": "yes",
+                "ref": "ΕΟ1",
+                "sidewalk": "right",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73197110000,
+                        37.99465960000
+                    ],
+                    [
+                        23.73186890000,
+                        37.99424230000
+                    ],
+                    [
+                        23.73175110000,
+                        37.99376100000
+                    ],
+                    [
+                        23.73158220000,
+                        37.99307110000
+                    ],
+                    [
+                        23.73156770000,
+                        37.99301180000
+                    ],
+                    [
+                        23.73156020000,
+                        37.99298120000
+                    ],
+                    [
+                        23.73155110000,
+                        37.99294430000
+                    ],
+                    [
+                        23.73153210000,
+                        37.99286630000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "secondary",
+                "lanes": "2",
+                "lit": "yes",
+                "name": "Δεριγνύ",
+                "name:el": "Δεριγνύ",
+                "oneway": "yes",
+                "source": "Yahoo",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73197110000,
+                        37.99465960000
+                    ],
+                    [
+                        23.73208540000,
+                        37.99464240000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "D24",
+                "poi": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73266816072,
+                    37.99443892123
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "A23",
+                "poi": "yes",
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73226113550,
+                    37.99373344716
                 ]
             }
         },
@@ -854,597 +2071,13 @@
         {
             "type": "Feature",
             "properties": {
-                "amenity": "classroom",
-                "name": "A23",
-                "poi": "yes"
+                "description": "This is the POI's description!"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    23.73226113550,
-                    37.99373344716
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "office",
-                "name": "Sygklitos",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73267956011,
-                    37.99419847952
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "crossing": "marked",
-                "highway": "crossing"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73212830000,
-                    37.99481240000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "bus": "yes",
-                "highway": "bus_stop",
-                "name": "Πανελλήνιος",
-                "network": "ΟΣΥ",
-                "operator": "ΟΑΣΑ",
-                "passenger_information_display": "yes",
-                "public_transport": "platform",
-                "ref": "060550",
-                "route_ref": "2;4;022;224",
-                "shelter": "yes",
-                "tickets:public_transport": "no",
-                "trolleybus": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73311010000,
-                    37.99423320000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "footway"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73337690000,
-                        37.99314590000
-                    ],
-                    [
-                        23.73298730000,
-                        37.99334720000
-                    ],
-                    [
-                        23.73284550000,
-                        37.99342050000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals",
-                "traffic_signals": "signal"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73190080000,
-                    37.99467020000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73237100000,
-                            37.99467030000
-                        ],
-                        [
-                            23.73249530000,
-                            37.99464990000
-                        ],
-                        [
-                            23.73256610000,
-                            37.99491790000
-                        ],
-                        [
-                            23.73244170000,
-                            37.99493830000
-                        ],
-                        [
-                            23.73241350000,
-                            37.99483160000
-                        ],
-                        [
-                            23.73240770000,
-                            37.99480940000
-                        ],
-                        [
-                            23.73240130000,
-                            37.99478510000
-                        ],
-                        [
-                            23.73237100000,
-                            37.99467030000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "barrier": "gate",
-                "opening_hours": "off"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73298730000,
-                    37.99334720000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "main-to-library"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73227253489,
-                        37.99393689918
-                    ],
-                    [
-                        23.73248174753,
-                        37.99391576107
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals",
-                "traffic_signals": "signal"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73228390000,
-                    37.99545410000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "classroom",
-                "name": "D24",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73266816072,
-                    37.99443892123
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73167670000,
-                            37.99466910000
-                        ],
-                        [
-                            23.73183390000,
-                            37.99464730000
-                        ],
-                        [
-                            23.73177270000,
-                            37.99442020000
-                        ],
-                        [
-                            23.73166140000,
-                            37.99443530000
-                        ],
-                        [
-                            23.73167660000,
-                            37.99450360000
-                        ],
-                        [
-                            23.73166180000,
-                            37.99450570000
-                        ],
-                        [
-                            23.73167880000,
-                            37.99458200000
-                        ],
-                        [
-                            23.73165790000,
-                            37.99458490000
-                        ],
-                        [
-                            23.73167670000,
-                            37.99466910000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "crossing": "marked",
-                "highway": "crossing"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73201220000,
-                    37.99482760000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-a21"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73252868585,
-                        37.99376251177
-                    ],
-                    [
-                        23.73253069751,
-                        37.99374295922
-                    ],
-                    [
-                        23.73248375885,
-                        37.99369011445
-                    ],
-                    [
-                        23.73243547909,
-                        37.99375775574
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:housenumber": "8",
-                "addr:street": "Αντωνιάδου"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73253410000,
-                    37.99346850000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "classroom",
-                "name": "A25",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73204655878,
-                    37.99376621090
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "stairs-to-derigny"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73257227175,
-                        37.99426612034
-                    ],
-                    [
-                        23.73258098893,
-                        37.99425502302
-                    ],
-                    [
-                        23.73256757788,
-                        37.99420904840
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73240860000,
-                            37.99350940000
-                        ],
-                        [
-                            23.73226190000,
-                            37.99353030000
-                        ],
-                        [
-                            23.73223450000,
-                            37.99341070000
-                        ],
-                        [
-                            23.73238110000,
-                            37.99338980000
-                        ],
-                        [
-                            23.73240860000,
-                            37.99350940000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-wc"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73243614964,
-                        37.99377836519
-                    ],
-                    [
-                        23.73252868585,
-                        37.99376251177
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "landuse": "residential"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73186370000,
-                            37.99361030000
-                        ],
-                        [
-                            23.73278840000,
-                            37.99346780000
-                        ],
-                        [
-                            23.73243680000,
-                            37.99202270000
-                        ],
-                        [
-                            23.73202850000,
-                            37.99209670000
-                        ],
-                        [
-                            23.73153850000,
-                            37.99216740000
-                        ],
-                        [
-                            23.73186370000,
-                            37.99361030000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "residential",
-                "name": "Αντωνιάδου",
-                "name:el": "Αντωνιάδου",
-                "oneway": "yes",
-                "source": "Yahoo",
-                "surface": "asphalt"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73285790000,
-                        37.99347730000
-                    ],
-                    [
-                        23.73183820000,
-                        37.99363140000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "office",
-                "name": "Prytaneia",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73276069693,
-                    37.99416307375
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "alt_name": "Πατησίων",
-                "highway": "primary",
-                "int_name": "28is Oktovriou",
-                "lanes": "3",
-                "lit": "yes",
-                "name": "28ης Οκτωβρίου",
-                "oneway": "yes",
-                "ref": "ΕΟ1",
-                "sidewalk": "right",
-                "surface": "asphalt"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73164680000,
-                        37.99284860000
-                    ],
-                    [
-                        23.73166650000,
-                        37.99292710000
-                    ],
-                    [
-                        23.73173820000,
-                        37.99322260000
-                    ],
-                    [
-                        23.73176500000,
-                        37.99333200000
-                    ],
-                    [
-                        23.73183820000,
-                        37.99363140000
-                    ],
-                    [
-                        23.73206750000,
-                        37.99456920000
-                    ],
-                    [
-                        23.73208540000,
-                        37.99464240000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "main-to-teleton"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73249532207,
-                        37.99397120462
-                    ],
-                    [
-                        23.73252667420,
-                        37.99396384992
-                    ],
-                    [
-                        23.73259507053,
-                        37.99404470210
-                    ],
-                    [
-                        23.73251633273,
-                        37.99405701999
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-antiprytaneia"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73261049323,
-                        37.99420746307
-                    ],
-                    [
-                        23.73260378771,
-                        37.99416465908
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals",
-                "traffic_signals": "signal"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73056710000,
-                    37.99487100000
+                    23.73248375885,
+                    37.99369011445
                 ]
             }
         },
@@ -1481,257 +2114,6 @@
                         23.73248174753,
                         37.99391576107
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "main-to-derigny"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73258568279,
-                        37.99438079254
-                    ],
-                    [
-                        23.73257227175,
-                        37.99426612034
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "alt_name": "Πατησίων",
-                "highway": "primary",
-                "int_name": "28is Oktovriou",
-                "lanes": "3",
-                "lit": "yes",
-                "name": "28ης Οκτωβρίου",
-                "oneway": "yes",
-                "ref": "ΕΟ1",
-                "sidewalk": "right",
-                "surface": "asphalt"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73208540000,
-                        37.99464240000
-                    ],
-                    [
-                        23.73212830000,
-                        37.99481240000
-                    ],
-                    [
-                        23.73228390000,
-                        37.99545410000
-                    ],
-                    [
-                        23.73231560000,
-                        37.99558380000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73257690000,
-                            37.99360590000
-                        ],
-                        [
-                            23.73271880000,
-                            37.99358510000
-                        ],
-                        [
-                            23.73276380000,
-                            37.99377620000
-                        ],
-                        [
-                            23.73262190000,
-                            37.99379690000
-                        ],
-                        [
-                            23.73261930000,
-                            37.99378590000
-                        ],
-                        [
-                            23.73257690000,
-                            37.99360590000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "classroom",
-                "name": "D21",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73255617850,
-                    37.99447009933
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:street": "Δεριγνύ 10",
-                "amenity": "theatre",
-                "name": "Θέατρο Αθηνά",
-                "phone": "2108237330"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73244730000,
-                    37.99471870000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-sygklito"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73267956011,
-                        37.99419847952
-                    ],
-                    [
-                        23.73264938526,
-                        37.99419953641
-                    ],
-                    [
-                        23.73265027820,
-                        37.99415755354
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "name": "ΟΤΕ",
-                "network": "ΟΣΥ",
-                "public_transport": "stop_position",
-                "ref": "061064",
-                "route_ref": "2;3;4;5;11",
-                "trolleybus": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73156770000,
-                    37.99301180000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:country": "GR",
-                "addr:housenumber": "72",
-                "addr:postcode": "10434",
-                "addr:street": "28ης Οκτωβρίου"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73193720000,
-                    37.99348970000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "classroom",
-                "name": "A21",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73248375885,
-                    37.99369011445
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals",
-                "traffic_signals": "signal"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.72935510000,
-                    37.99505350000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-d22"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73243212633,
-                        37.99445266073
-                    ],
-                    [
-                        23.73245894842,
-                        37.99441936885
-                    ],
-                    [
-                        23.73247906499,
-                        37.99440245869
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "public_transport": "stop_position",
-                "trolleybus": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73175110000,
-                    37.99376100000
                 ]
             }
         },
@@ -1955,6 +2337,232 @@
         {
             "type": "Feature",
             "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-a25"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73210355572,
+                        37.99382962455
+                    ],
+                    [
+                        23.73204655878,
+                        37.99376621090
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "prytaneia-corridor"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73253850097,
+                        37.99414756328
+                    ],
+                    [
+                        23.73259976439,
+                        37.99414352130
+                    ],
+                    [
+                        23.73260378771,
+                        37.99416465908
+                    ],
+                    [
+                        23.73265027820,
+                        37.99415755354
+                    ],
+                    [
+                        23.73266472668,
+                        37.99415534526
+                    ],
+                    [
+                        23.73271442883,
+                        37.99414774886
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "alt_name": "Πατησίων",
+                "highway": "primary",
+                "int_name": "28is Oktovriou",
+                "lanes": "3",
+                "lit": "yes",
+                "name": "28ης Οκτωβρίου",
+                "oneway": "yes",
+                "ref": "ΕΟ1",
+                "sidewalk": "right",
+                "surface": "asphalt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73220160000,
+                        37.99560120000
+                    ],
+                    [
+                        23.73206830000,
+                        37.99505670000
+                    ],
+                    [
+                        23.73202150000,
+                        37.99486560000
+                    ],
+                    [
+                        23.73201220000,
+                        37.99482760000
+                    ],
+                    [
+                        23.73197110000,
+                        37.99465960000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73226113550,
+                    37.99373344716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "Utility",
+                "internet_access": "yes",
+                "name": "CSLab1",
+                "poi": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73239792816,
+                    37.99439400361
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "extreme"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73227253489,
+                        37.99393689918
+                    ],
+                    [
+                        23.73211897843,
+                        37.99396596371
+                    ],
+                    [
+                        23.73239792816,
+                        37.99439400361
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73237378828,
+                    37.99371759373
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "main-to-library"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73227253489,
+                        37.99393689918
+                    ],
+                    [
+                        23.73248174753,
+                        37.99391576107
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:city": "Αθήνα",
+                "addr:country": "GR",
+                "addr:housenumber": "72",
+                "addr:postcode": "10434",
+                "addr:street": "28ης Οκτωβρίου"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73193720000,
+                    37.99348970000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73204655878,
+                    37.99376621090
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals",
+                "traffic_signals": "signal"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73190080000,
+                    37.99467020000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
                 "landuse": "residential"
             },
             "geometry": {
@@ -1962,24 +2570,28 @@
                 "coordinates": [
                     [
                         [
-                            23.73072740000,
-                            37.99483410000
+                            23.73186370000,
+                            37.99361030000
                         ],
                         [
-                            23.73190520000,
-                            37.99465730000
+                            23.73278840000,
+                            37.99346780000
                         ],
                         [
-                            23.73148390000,
-                            37.99289980000
+                            23.73243680000,
+                            37.99202270000
                         ],
                         [
-                            23.73027140000,
-                            37.99309060000
+                            23.73202850000,
+                            37.99209670000
                         ],
                         [
-                            23.73072740000,
-                            37.99483410000
+                            23.73153850000,
+                            37.99216740000
+                        ],
+                        [
+                            23.73186370000,
+                            37.99361030000
                         ]
                     ]
                 ]
@@ -1988,15 +2600,203 @@
         {
             "type": "Feature",
             "properties": {
-                "amenity": "classroom",
-                "name": "A22",
+                "amenity": "utility",
+                "name": "D22",
                 "poi": "yes"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    23.73237378828,
-                    37.99371759373
+                    23.73243212633,
+                    37.99445266073
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "commercial",
+                "name": "Prytaneia",
+                "poi": "yes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73276069693,
+                    37.99416307375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "main-to-antoniadou"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73245995475,
+                        37.99384640234
+                    ],
+                    [
+                        23.73243614964,
+                        37.99377836519
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:interpolation": "even"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73199770000,
+                        37.99355090000
+                    ],
+                    [
+                        23.73253410000,
+                        37.99346850000
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "A24",
+                "poi": "yes",
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73215250604,
+                    37.99374982903
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "derigny-corridor"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73247906499,
+                        37.99440245869
+                    ],
+                    [
+                        23.73258568279,
+                        37.99438079254
+                    ],
+                    [
+                        23.73262792759,
+                        37.99439083295
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "building": "yes"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            23.73237100000,
+                            37.99467030000
+                        ],
+                        [
+                            23.73249530000,
+                            37.99464990000
+                        ],
+                        [
+                            23.73256610000,
+                            37.99491790000
+                        ],
+                        [
+                            23.73244170000,
+                            37.99493830000
+                        ],
+                        [
+                            23.73241350000,
+                            37.99483160000
+                        ],
+                        [
+                            23.73240770000,
+                            37.99480940000
+                        ],
+                        [
+                            23.73240130000,
+                            37.99478510000
+                        ],
+                        [
+                            23.73237100000,
+                            37.99467030000
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "amenity": "utility",
+                "name": "A21",
+                "poi": "yes",
+                "description": "This is the POI's description!"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73248375885,
+                    37.99369011445
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "traffic_signals"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.73202150000,
+                    37.99486560000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "highway": "pedestrian",
+                "name": "corridor-to-wc"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        23.73243614964,
+                        37.99377836519
+                    ],
+                    [
+                        23.73252868585,
+                        37.99376251177
+                    ]
                 ]
             }
         },
@@ -2607,88 +3407,6 @@
             "type": "Feature",
             "properties": {
                 "highway": "pedestrian",
-                "name": "main-to-antoniadou"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73245995475,
-                        37.99384640234
-                    ],
-                    [
-                        23.73243614964,
-                        37.99377836519
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "classroom",
-                "name": "A24",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73215250604,
-                    37.99374982903
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "crossing": "marked",
-                "highway": "crossing"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73155110000,
-                    37.99294430000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "hall",
-                "name": "Teleton",
-                "poi": "yes",
-                "restricted": "false"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73259507053,
-                    37.99404470210
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:housenumber": "8",
-                "addr:street": "Δεριγνύ",
-                "amenity": "cafe",
-                "name": "Moak"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73260250000,
-                    37.99472790000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
                 "name": "corridor-to-a24"
             },
             "geometry": {
@@ -2705,660 +3423,6 @@
                     [
                         23.73222911522,
                         37.99381027333
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "shop": "kiosk"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73307100000,
-                    37.99399770000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "library",
-                "name": "library",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73227253489,
-                    37.99393689918
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:interpolation": "even"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73199770000,
-                        37.99355090000
-                    ],
-                    [
-                        23.73253410000,
-                        37.99346850000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "landuse": "residential"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73236250000,
-                            37.99554490000
-                        ],
-                        [
-                            23.73318060000,
-                            37.99540860000
-                        ],
-                        [
-                            23.73321000000,
-                            37.99535910000
-                        ],
-                        [
-                            23.73303430000,
-                            37.99454310000
-                        ],
-                        [
-                            23.73280010000,
-                            37.99351630000
-                        ],
-                        [
-                            23.73188280000,
-                            37.99365450000
-                        ],
-                        [
-                            23.73213440000,
-                            37.99468270000
-                        ],
-                        [
-                            23.73236250000,
-                            37.99554490000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:housenumber": "84",
-                "addr:street": "28ης Οκτωβρίου",
-                "amenity": "post_office",
-                "building": "yes",
-                "name": "Ελληνικά Ταχυδρομεία"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73221090000,
-                            37.99484170000
-                        ],
-                        [
-                            23.73217410000,
-                            37.99470260000
-                        ],
-                        [
-                            23.73237100000,
-                            37.99467030000
-                        ],
-                        [
-                            23.73240130000,
-                            37.99478510000
-                        ],
-                        [
-                            23.73231700000,
-                            37.99479900000
-                        ],
-                        [
-                            23.73232340000,
-                            37.99482330000
-                        ],
-                        [
-                            23.73221090000,
-                            37.99484170000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "CSLab",
-                "internet_access": "yes",
-                "name": "CSLab1",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73239792816,
-                    37.99439400361
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals",
-                "traffic_signals": "signal"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73309290000,
-                    37.99449070000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73265470000,
-                            37.99330770000
-                        ],
-                        [
-                            23.73269180000,
-                            37.99346900000
-                        ],
-                        [
-                            23.73240860000,
-                            37.99350940000
-                        ],
-                        [
-                            23.73238110000,
-                            37.99338980000
-                        ],
-                        [
-                            23.73237150000,
-                            37.99334810000
-                        ],
-                        [
-                            23.73247780000,
-                            37.99333290000
-                        ],
-                        [
-                            23.73248920000,
-                            37.99338220000
-                        ],
-                        [
-                            23.73254110000,
-                            37.99337480000
-                        ],
-                        [
-                            23.73252980000,
-                            37.99332550000
-                        ],
-                        [
-                            23.73265470000,
-                            37.99330770000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "secondary",
-                "lanes": "3",
-                "lit": "yes",
-                "name": "Μαυροματαίων",
-                "oneway": "yes",
-                "source": "Yahoo",
-                "surface": "asphalt",
-                "turn:lanes": "left|through;right|right"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73309290000,
-                        37.99449070000
-                    ],
-                    [
-                        23.73325310000,
-                        37.99516990000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:housenumber": "2",
-                "addr:street": "Αντωνιάδου"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73199770000,
-                    37.99355090000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-a25"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73210355572,
-                        37.99382962455
-                    ],
-                    [
-                        23.73204655878,
-                        37.99376621090
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73202150000,
-                    37.99486560000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "amenity": "office",
-                "name": "AntiPrytaneia",
-                "poi": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73261049323,
-                    37.99420746307
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "corridor-to-prytaneia"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73276069693,
-                        37.99416307375
-                    ],
-                    [
-                        23.73271442883,
-                        37.99414774886
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:housenumber": "8",
-                "addr:street": "Δεριγνύ",
-                "name": "Print easy",
-                "shop": "copyshop"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73252960000,
-                    37.99472590000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73264170000,
-                            37.99462590000
-                        ],
-                        [
-                            23.73279250000,
-                            37.99460120000
-                        ],
-                        [
-                            23.73283230000,
-                            37.99475200000
-                        ],
-                        [
-                            23.73283750000,
-                            37.99477150000
-                        ],
-                        [
-                            23.73268670000,
-                            37.99479630000
-                        ],
-                        [
-                            23.73264170000,
-                            37.99462590000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "building": "yes"
-            },
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
-                        [
-                            23.73186670000,
-                            37.99343350000
-                        ],
-                        [
-                            23.73190270000,
-                            37.99359030000
-                        ],
-                        [
-                            23.73207790000,
-                            37.99356530000
-                        ],
-                        [
-                            23.73205640000,
-                            37.99347150000
-                        ],
-                        [
-                            23.73203410000,
-                            37.99347460000
-                        ],
-                        [
-                            23.73201960000,
-                            37.99341170000
-                        ],
-                        [
-                            23.73186670000,
-                            37.99343350000
-                        ]
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "traffic_signals"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73206750000,
-                    37.99456920000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "secondary",
-                "lanes": "2",
-                "name": "Δεριγνύ",
-                "oneway": "yes",
-                "source": "Yahoo",
-                "surface": "asphalt"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.72722900000,
-                        37.99537360000
-                    ],
-                    [
-                        23.72834520000,
-                        37.99520550000
-                    ],
-                    [
-                        23.72872450000,
-                        37.99514840000
-                    ],
-                    [
-                        23.72935510000,
-                        37.99505350000
-                    ],
-                    [
-                        23.72946260000,
-                        37.99503730000
-                    ],
-                    [
-                        23.72991300000,
-                        37.99496950000
-                    ],
-                    [
-                        23.73056710000,
-                        37.99487100000
-                    ],
-                    [
-                        23.73067430000,
-                        37.99485490000
-                    ],
-                    [
-                        23.73190080000,
-                        37.99467020000
-                    ],
-                    [
-                        23.73197110000,
-                        37.99465960000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "barrier": "hedge"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73176270000,
-                        37.99356850000
-                    ],
-                    [
-                        23.73200270000,
-                        37.99453810000
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "highway": "pedestrian",
-                "name": "prytaneia-corridor"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73253850097,
-                        37.99414756328
-                    ],
-                    [
-                        23.73259976439,
-                        37.99414352130
-                    ],
-                    [
-                        23.73260378771,
-                        37.99416465908
-                    ],
-                    [
-                        23.73265027820,
-                        37.99415755354
-                    ],
-                    [
-                        23.73266472668,
-                        37.99415534526
-                    ],
-                    [
-                        23.73271442883,
-                        37.99414774886
-                    ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "bus": "yes",
-                "name": "ΟΤΕ Πεδίου Άρεως",
-                "network": "ΟΣΥ",
-                "operator": "ΟΑΣΑ",
-                "public_transport": "stop_position",
-                "ref": "060475",
-                "trolleybus": "yes"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73176500000,
-                    37.99333200000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "button_operated": "no",
-                "crossing": "marked",
-                "highway": "crossing",
-                "tactile_paving": "yes",
-                "traffic_signals:sound": "no"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73166650000,
-                    37.99292710000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "addr:city": "Αθήνα",
-                "addr:country": "GR",
-                "addr:housenumber": "29",
-                "addr:postcode": "10434",
-                "addr:street": "Μαυροματαίων"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    23.73264220000,
-                    37.99340820000
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "alt_name": "Πατησίων",
-                "highway": "primary",
-                "int_name": "28is Oktovriou",
-                "lanes": "3",
-                "lit": "yes",
-                "name": "28ης Οκτωβρίου",
-                "oneway": "yes",
-                "ref": "ΕΟ1",
-                "sidewalk": "right",
-                "surface": "asphalt"
-            },
-            "geometry": {
-                "type": "LineString",
-                "coordinates": [
-                    [
-                        23.73197110000,
-                        37.99465960000
-                    ],
-                    [
-                        23.73186890000,
-                        37.99424230000
-                    ],
-                    [
-                        23.73175110000,
-                        37.99376100000
-                    ],
-                    [
-                        23.73158220000,
-                        37.99307110000
-                    ],
-                    [
-                        23.73156770000,
-                        37.99301180000
-                    ],
-                    [
-                        23.73156020000,
-                        37.99298120000
-                    ],
-                    [
-                        23.73155110000,
-                        37.99294430000
-                    ],
-                    [
-                        23.73153210000,
-                        37.99286630000
                     ]
                 ]
             }

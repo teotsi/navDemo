@@ -12,7 +12,8 @@ import java.io.IOException;
 public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInterest> {
     @Override
     public PointOfInterest deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-        String name;
+        String name, description, icon;
+        description = icon = "";
         double lon, lat;
         PointOfInterestType amenity;
         boolean restricted;
@@ -34,7 +35,11 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
             lat = coordinates.get(1).asDouble();
             JsonNode restrictedNode = properties.get("restricted");
             restricted = restrictedNode != null && restrictedNode.asBoolean();
+            JsonNode descriptionNode = properties.get("description");
+            JsonNode iconNode = properties.get("icon");
+            description = descriptionNode != null ? descriptionNode.asText() : "";
+            icon = iconNode != null ? iconNode.asText() : "";
         }
-        return new PointOfInterest(name, lat, lon, amenity, restricted);
+        return new PointOfInterest(name, lat, lon, amenity, restricted, description, icon);
     }
 }

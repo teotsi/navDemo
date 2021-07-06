@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Entity;
 
@@ -20,22 +19,28 @@ public class PointOfInterest extends Point {
 
     private PointOfInterestType amenity;
     private boolean restricted;
+    private String description;
+    private String icon;
 
-    public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity) {
+    public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity, String description, String icon) {
         super(name, lat, lon);
         this.amenity = amenity;
         this.restricted = false;
+        this.description = description;
+        this.icon = icon;
     }
 
-    public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity, boolean restricted) {
+    public PointOfInterest(String name, double lat, double lon, PointOfInterestType amenity, boolean restricted, String description, String icon) {
         super(name, lat, lon);
         this.amenity = amenity;
         this.restricted = restricted;
+        this.description = description;
+        this.icon = icon;
     }
 
     @Override
-    public String toString(){
-        return "PointOfInterest: amenity=" + amenity + ", name="+ this.name+", restricted="+ this.restricted;
+    public String toString() {
+        return "PointOfInterest: amenity=" + amenity + ", name=" + this.name + ", restricted=" + this.restricted;
     }
 
 }
