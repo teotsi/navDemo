@@ -40,7 +40,7 @@ public class PointOfInterest extends Point {
 
     @Override
     public String toString() {
-        return "PointOfInterest: amenity=" + amenity + ", name=" + this.name + ", restricted=" + this.restricted;
+        return "PointOfInterest: amenity=" + amenity + ", name=" + this.name + ", restricted=" + this.restricted + ", description:=" + description;
     }
 
 }

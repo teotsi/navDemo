@@ -26,6 +26,10 @@ public class PointOfInterestDeserializer extends JsonDeserializer<PointOfInteres
             amenity = PointOfInterestType.valueOfByName(node.get("amenity").asText());
             JsonNode restrictedNode = node.get("restricted");
             restricted = restrictedNode != null && restrictedNode.asBoolean();
+            JsonNode descriptionNode = node.get("description");
+            JsonNode iconNode = node.get("icon");
+            description = descriptionNode != null ? descriptionNode.asText() : "";
+            icon = iconNode != null ? iconNode.asText() : "";
         } else {
             JsonNode properties = node.get("properties");
             name = properties.get("name").asText();
