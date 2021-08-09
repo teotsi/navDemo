@@ -41,7 +41,7 @@ public class NavController {
                 .build();
 
         Request request = new Request.Builder()
-                .url("http://localhost:5000")
+                .url("http://172.31.41.104:5000")
                 .post(body)
                 .build();
 
