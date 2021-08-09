@@ -20,6 +20,9 @@ public class DistanceController {
     @PostMapping()
     public DistanceDTO home(@RequestParam("image") MultipartFile file) throws IOException {
 
+        String classId = getClassIDFromName(file.getOriginalFilename());
+        String uuid = getUUIDFromName(file.getOriginalFilename());
+
         RequestBody body = new MultipartBuilder()
                 .addFormDataPart("image", file.getName()+ ".jpg", RequestBody.create(MediaType.parse("media/type"), multipartToFile(file,"image.jpg")))
                 .type(MultipartBuilder.FORM)
@@ -30,12 +33,13 @@ public class DistanceController {
                 .post(body)
                 .build();
 
-
         OkHttpClient client = new OkHttpClient();
         Response response = client.newCall(request).execute();
         String responseBody = response.body().string();
         ObjectMapper objectMapper = new ObjectMapper();
         DistanceDTO distanceDTO = objectMapper.readValue(responseBody, DistanceDTO.class);
+        distanceDTO.setClassId(classId);
+        distanceDTO.setUUID(uuid);
         return distanceDTO;
     }
 
@@ -44,4 +48,15 @@ public class DistanceController {
         multipart.transferTo(convFile);
         return convFile;
     }
+
+    private String getClassIDFromName(String name) {
+        String[] result = name.split("[$]");
+        return result[0];
+    }
+    private String getUUIDFromName(String name) {
+        String[] result = name.split("[$]");
+        result = result[1].split("[.]");
+        return result[0];
+    }
+
 }
