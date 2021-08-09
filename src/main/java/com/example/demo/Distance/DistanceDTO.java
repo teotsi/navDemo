@@ -10,4 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DistanceDTO {
     private double distance;
+    private String classId;
+    private String UUID;
 }
