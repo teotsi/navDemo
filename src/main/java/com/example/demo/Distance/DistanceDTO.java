@@ -1,4 +1,4 @@
-package com.example.demo.Nav;
+package com.example.demo.Distance;
 
 
 import lombok.Getter;
