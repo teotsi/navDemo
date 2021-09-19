@@ -17,8 +17,10 @@ import java.io.IOException;
 @RequestMapping("/api/distance")
 public class DistanceController {
 
+    private final ImageService service;
+
     @PostMapping()
-    public DistanceDTO home(@RequestParam("image") MultipartFile file) throws IOException {
+    public Image home(@RequestParam("image") MultipartFile file) throws IOException {
 
         String classId = getClassIDFromName(file.getOriginalFilename());
         String uuid = getUUIDFromName(file.getOriginalFilename());
@@ -38,9 +40,10 @@ public class DistanceController {
         String responseBody = response.body().string();
         ObjectMapper objectMapper = new ObjectMapper();
         DistanceDTO distanceDTO = objectMapper.readValue(responseBody, DistanceDTO.class);
-        distanceDTO.setClassId(classId);
-        distanceDTO.setUUID(uuid);
-        return distanceDTO;
+        Image imageData = service.getImage(classId);
+        imageData.setUuid(uuid);
+        imageData.setDistance(distanceDTO.getDistance());
+        return imageData;
     }
 
     public  static File multipartToFile(MultipartFile multipart, String fileName) throws IllegalStateException, IOException {
