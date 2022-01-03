@@ -38,9 +38,16 @@ public class DistanceController {
         OkHttpClient client = new OkHttpClient();
         Response response = client.newCall(request).execute();
         String responseBody = response.body().string();
+        System.out.println(responseBody);
         ObjectMapper objectMapper = new ObjectMapper();
         DistanceDTO distanceDTO = objectMapper.readValue(responseBody, DistanceDTO.class);
         Image imageData = service.getImage(classId);
+        if(imageData == null) {
+            imageData.setClassId(classId);
+            imageData.setLat(0.0);
+            imageData.setLon(0.0);
+            imageData.setDescription("image not found in db");
+        }
         imageData.setUuid(uuid);
         imageData.setDistance(distanceDTO.getDistance());
         return imageData;

@@ -14,7 +14,7 @@ public class ImageService {
     public List<Image> getImages() { return this.imageRepository.findAll();};
 
     public Image getImage(String classId) {
-        return this.imageRepository.findById(classId).orElseThrow(FourOhFourException::new);
+        return this.imageRepository.findById(classId).orElse(new Image());
     }
 
     public void registerImage(Image image) {
